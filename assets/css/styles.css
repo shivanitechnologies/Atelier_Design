@@ -726,7 +726,7 @@ input[type=range].estimator-slider::-moz-range-thumb {
    ========================================================================== */
 
 .hero-sequence-container {
-  height: 850vh;
+  height: 500vh;
   position: relative;
   background: #11120f;
 }

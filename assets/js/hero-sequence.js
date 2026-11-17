@@ -1,8 +1,9 @@
 /**
- * FORMA Scrollytelling Sequence Canvas Controller (600 Frames)
+ * FORMA Scrollytelling Sequence Canvas Controller (150 Frames, WebP)
  * ATELIER Interior Design Studio - Home Page 1
  * 
- * Optimized for rock-solid stability (Zero-shake) and smooth, relaxed pacing.
+ * 150 frames at 1920px width in high-efficiency WebP format.
+ * Zero-shake, fluid lerp interpolation, and optimized progressive preloader.
  */
 
 (function () {
@@ -18,7 +19,7 @@
   const loaderText = document.getElementById("loaderText");
   const loaderProgress = document.getElementById("loaderProgress");
 
-  const frameCount = 600;
+  const frameCount = 150;
   const images = new Array(frameCount);
 
   let currentFrame = 0;
@@ -27,13 +28,17 @@
   let loadedCount = 0;
   let isUnlocked = false;
 
-  function framePath(index) {
-    return `frames/frame_${String(index).padStart(4, "0")}.jpg`;
+  // Primary path uses optimized 1920px WebP; falls back to jpg if needed
+  function framePath(index, ext = "webp") {
+    return `frames/frame_${String(index).padStart(4, "0")}.${ext}`;
   }
 
-  // Pre-load frame 1 as anchor
+  // Pre-load frame 1 as anchor image
   const anchorImg = new Image();
-  anchorImg.src = framePath(1);
+  anchorImg.src = framePath(1, "webp");
+  anchorImg.onerror = () => {
+    anchorImg.src = framePath(1, "jpg");
+  };
   anchorImg.onload = () => {
     images[0] = anchorImg;
     if (lastDrawnFrame === -1) {
@@ -43,7 +48,7 @@
 
   /**
    * Safe Frame Retrieval:
-   * NEVER jumps forward or to distant frames.
+   * NEVER jumps forward or across scenes.
    * Only looks backward by up to 2 frames if a single frame is pending.
    * If not available, returns null so canvas retains last drawn image without flickering.
    */
@@ -106,7 +111,7 @@
     drawFrame(Math.round(currentFrame));
   }
 
-  // Calculate scroll progress through extended 850vh hero section (slower, relaxed speed)
+  // Calculate scroll progress through hero section
   function updateScrollTarget() {
     if (!hero) return;
 
@@ -124,7 +129,6 @@
   function animationLoop() {
     const delta = targetFrame - currentFrame;
     if (Math.abs(delta) > 0.005) {
-      // Gentle damping factor (0.08) eliminates violent acceleration and jitter
       currentFrame += delta * 0.08;
     } else {
       currentFrame = targetFrame;
@@ -136,7 +140,7 @@
     }
 
     if (counter) {
-      counter.textContent = `${String(frameToDraw + 1).padStart(3, "0")} / 600`;
+      counter.textContent = `${String(frameToDraw + 1).padStart(3, "0")} / 150`;
     }
 
     if (progress && hero) {
@@ -150,7 +154,7 @@
     requestAnimationFrame(animationLoop);
   }
 
-  // Sequential, Pipeline-Controlled Image Loader
+  // Optimized Sequential Preloader for 150 WebP Frames
   function loadImages() {
     return new Promise((resolve) => {
       const unlock = () => {
@@ -162,16 +166,15 @@
             loader.style.pointerEvents = "none";
             setTimeout(() => {
               loader.style.display = "none";
-            }, 600);
+            }, 500);
           }
           drawFrame(0);
           resolve();
         }
       };
 
-      // Strict sequential order loader to ensure continuous contiguous buffer
       let nextIndexToLoad = 0;
-      const maxConcurrent = 12; // Maintain up to 12 active connections in strict numerical order
+      const maxConcurrent = 10;
       let activeRequests = 0;
 
       function spawnNext() {
@@ -180,7 +183,7 @@
           activeRequests++;
 
           const img = new Image();
-          img.src = framePath(idx + 1);
+          img.src = framePath(idx + 1, "webp");
 
           img.onload = () => {
             images[idx] = img;
@@ -191,8 +194,8 @@
             if (loaderText) loaderText.textContent = `PREPARING YOUR EXPERIENCE ${pct}%`;
             if (loaderProgress) loaderProgress.style.width = `${pct}%`;
 
-            // Unlock once first 50 contiguous frames are ready
-            if (loadedCount >= 50) {
+            // Instant unlock as soon as first 20 frames are ready
+            if (loadedCount >= 20) {
               unlock();
             }
 
@@ -200,12 +203,22 @@
           };
 
           img.onerror = () => {
-            loadedCount++;
-            activeRequests--;
-            if (loadedCount >= 50) {
-              unlock();
-            }
-            spawnNext();
+            // Fallback to jpg if browser doesn't load webp
+            const fallback = new Image();
+            fallback.src = framePath(idx + 1, "jpg");
+            fallback.onload = () => {
+              images[idx] = fallback;
+              loadedCount++;
+              activeRequests--;
+              if (loadedCount >= 20) unlock();
+              spawnNext();
+            };
+            fallback.onerror = () => {
+              loadedCount++;
+              activeRequests--;
+              if (loadedCount >= 20) unlock();
+              spawnNext();
+            };
           };
         }
 
@@ -216,8 +229,8 @@
 
       spawnNext();
 
-      // Maximum safety fallback (2.0s)
-      setTimeout(unlock, 2000);
+      // Safety timeout: 1.5s
+      setTimeout(unlock, 1500);
     });
   }
 
