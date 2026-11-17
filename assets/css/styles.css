@@ -559,7 +559,6 @@ html:not(.dark) #hero span.text-gold,
 html:not(.dark) #hero .metric-num,
 html:not(.dark) #hero .scroll-indicator,
 html:not(.dark) #hero .scroll-indicator span,
-html:not(.dark) #hero .btn,
 html:not(.dark) #estimator .text-gold,
 html:not(.dark) #estimator #area-val,
 html:not(.dark) #estimator #budget-output,
@@ -570,6 +569,22 @@ html:not(.dark) .bg-charcoal-card .text-gold,
 html:not(.dark) footer .text-gold,
 html:not(.dark) footer a:hover {
   color: #d5c3a5 !important;
+}
+
+/* Ensure Hero Gold Buttons always have crisp dark text in both light and dark modes */
+#hero a.bg-gold,
+#hero .btn.bg-gold,
+html:not(.dark) #hero a.bg-gold,
+html:not(.dark) #hero .btn.bg-gold {
+  color: #0a0a08 !important;
+  background-color: #d5c3a5 !important;
+}
+
+#hero a.bg-gold span,
+#hero a.bg-gold i,
+html:not(.dark) #hero a.bg-gold span,
+html:not(.dark) #hero a.bg-gold i {
+  color: #0a0a08 !important;
 }
 
 /* Large Stage & Watermark Numbers (01, 02, 03) in Light Mode */

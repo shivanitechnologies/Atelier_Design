@@ -574,60 +574,47 @@ function drawFrame(index) {
   lastDrawnFrame = index;
 }
 
-// GET SCROLL PROGRESS
+// GET SCROLL PROGRESS WITH SMOOTH LERP INTERPOLATION
 
-function updateAnimation() {
+let targetFrame = 0;
 
+function updateScrollTarget() {
   const rect = hero.getBoundingClientRect();
-
-  const scrollableDistance =
-    hero.offsetHeight - window.innerHeight;
-
-  const scrolled = Math.max(
-    0,
-    Math.min(scrollableDistance, -rect.top)
-  );
-
-  const scrollProgress = scrollableDistance > 0
-    ? scrolled / scrollableDistance
-    : 0;
-
-  const frame = Math.min(
-    frameCount - 1,
-    Math.floor(scrollProgress * (frameCount - 1))
-  );
-
-  currentFrame = frame;
-
-  if (frame !== lastDrawnFrame) {
-    drawFrame(frame);
-  }
-
-  counter.textContent =
-    `${String(frame + 1).padStart(3, "0")} / 150`;
-
-  progress.style.width =
-    `${scrollProgress * 100}%`;
+  const scrollableDistance = hero.offsetHeight - window.innerHeight;
+  const scrolled = Math.max(0, Math.min(scrollableDistance, -rect.top));
+  const scrollProgress = scrollableDistance > 0 ? scrolled / scrollableDistance : 0;
+  targetFrame = scrollProgress * (frameCount - 1);
 }
 
-// SCROLL ANIMATION
-
-let ticking = false;
-
-window.addEventListener("scroll", () => {
-
-  if (!imagesReady) return;
-
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      updateAnimation();
-      ticking = false;
-    });
-
-    ticking = true;
+function animationLoop() {
+  const delta = targetFrame - currentFrame;
+  if (Math.abs(delta) > 0.005) {
+    currentFrame += delta * 0.08;
+  } else {
+    currentFrame = targetFrame;
   }
 
-}, { passive: true });
+  const frameToDraw = Math.min(frameCount - 1, Math.max(0, Math.round(currentFrame)));
+  if (frameToDraw !== lastDrawnFrame) {
+    drawFrame(frameToDraw);
+  }
+
+  if (counter) {
+    counter.textContent = `${String(frameToDraw + 1).padStart(3, "0")} / 150`;
+  }
+
+  if (progress && hero) {
+    const scrollableDistance = hero.offsetHeight - window.innerHeight;
+    const rect = hero.getBoundingClientRect();
+    const scrolled = Math.max(0, Math.min(scrollableDistance, -rect.top));
+    const pct = scrollableDistance > 0 ? (scrolled / scrollableDistance) * 100 : 0;
+    progress.style.width = `${pct}%`;
+  }
+
+  requestAnimationFrame(animationLoop);
+}
+
+window.addEventListener("scroll", updateScrollTarget, { passive: true });
 
 // INITIALIZE
 
@@ -643,7 +630,8 @@ async function init() {
 
   drawFrame(0);
 
-  updateAnimation();
+  updateScrollTarget();
+  requestAnimationFrame(animationLoop);
 }
 
 window.addEventListener("resize", resizeCanvas);
