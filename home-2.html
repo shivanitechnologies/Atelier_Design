@@ -639,7 +639,7 @@
             <div>
               <label class="text-[10px] uppercase tracking-[0.24em] text-neutral-400 font-semibold block mb-3">Project Discipline</label>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="estimator-discipline-group">
-                <button type="button" data-discipline="residential" class="discipline-btn py-3 px-2 sm:px-3 rounded-sm text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all bg-gold text-charcoal-950 font-semibold border border-gold cursor-pointer shadow-sm">
+                <button type="button" data-discipline="residential" class="discipline-btn py-3 px-2 sm:px-3 rounded-sm text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all bg-gold !text-charcoal-950 font-semibold border border-gold cursor-pointer shadow-sm">
                   Residential
                 </button>
                 <button type="button" data-discipline="executive-office" class="discipline-btn py-3 px-2 sm:px-3 rounded-sm text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all bg-charcoal-card text-neutral-300 border border-white/10 hover:border-gold/40 cursor-pointer">
@@ -678,9 +678,9 @@
                   <span class="text-xs uppercase tracking-wider font-semibold text-neutral-200">Essential</span>
                   <span class="text-[9.5px] text-neutral-400 font-light mt-0.5">Custom millwork</span>
                 </button>
-                <button type="button" data-tier="signature" class="tier-btn py-3.5 px-3 rounded-sm text-center border border-gold bg-gold text-charcoal-950 transition-all flex flex-col items-center justify-center cursor-pointer shadow-sm">
-                  <span class="text-xs uppercase tracking-wider font-semibold text-charcoal-950">Signature</span>
-                  <span class="text-[9.5px] text-charcoal-900 font-medium mt-0.5">Bookmatched stone</span>
+                <button type="button" data-tier="signature" class="tier-btn py-3.5 px-3 rounded-sm text-center border border-gold bg-gold !text-charcoal-950 transition-all flex flex-col items-center justify-center cursor-pointer shadow-sm">
+                  <span class="text-xs uppercase tracking-wider font-semibold !text-charcoal-950">Signature</span>
+                  <span class="text-[9.5px] !text-charcoal-900 font-medium mt-0.5">Bookmatched stone</span>
                 </button>
                 <button type="button" data-tier="couture" class="tier-btn py-3.5 px-3 rounded-sm text-center border border-white/10 bg-charcoal-card hover:border-gold/40 transition-all flex flex-col items-center justify-center cursor-pointer group">
                   <span class="text-xs uppercase tracking-wider font-semibold text-neutral-200">Haute Couture</span>
@@ -693,7 +693,7 @@
             <div class="border border-white/10 bg-black/35 rounded-sm p-5 sm:p-6 space-y-4">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-neutral-400 font-medium">Estimated Budget:</span>
-                <span id="budget-output" class="font-serif text-2xl sm:text-3xl lg:text-[32px] text-gold font-light tracking-tight text-right">$90,250 &ndash; $112,100</span>
+                <span id="budget-output" class="font-serif text-2xl sm:text-3xl lg:text-[32px] text-gold font-light tracking-tight text-right">₹80,00,000 &ndash; ₹1,02,50,000</span>
               </div>
               <div class="h-px bg-white/10"></div>
               <div class="flex items-center justify-between text-xs sm:text-sm">
@@ -703,12 +703,12 @@
               <div class="h-px bg-white/10"></div>
               <div class="flex items-center justify-between text-xs sm:text-sm">
                 <span class="text-neutral-400 font-light">Architectural Rate:</span>
-                <span id="rate-output" class="font-mono text-neutral-200 font-medium">$38 / sq.ft</span>
+                <span id="rate-output" class="font-mono text-neutral-200 font-medium">₹3,600 / sq.ft</span>
               </div>
             </div>
 
             <!-- 5. ACTION BUTTON -->
-            <button type="button" id="lock-config-btn" class="w-full py-4 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs sm:text-[12.5px] uppercase tracking-[0.22em] font-semibold rounded-sm shadow-xl transition-all duration-300 text-center block border border-gold cursor-pointer">
+            <button type="button" id="lock-config-btn" class="w-full py-4 bg-gold hover:bg-ivory !text-charcoal-950 hover:!text-charcoal-900 text-xs sm:text-[12.5px] uppercase tracking-[0.22em] font-semibold rounded-sm shadow-xl transition-all duration-300 text-center block border border-gold cursor-pointer">
               Lock Configuration &amp; Request Consultation
             </button>
 
@@ -820,9 +820,9 @@
       let currentTier = 'signature';
 
       const tierRates = {
-        essential: { low: 22.50, high: 28.00, rate: 25, durationBase: [6, 9] },
-        signature: { low: 36.10, high: 44.84, rate: 38, durationBase: [10, 14] },
-        couture: { low: 58.50, high: 76.00, rate: 64, durationBase: [16, 22] }
+        essential: { low: 1850, high: 2400, rate: 2100, durationBase: [6, 9] },
+        signature: { low: 3200, high: 4100, rate: 3600, durationBase: [10, 14] },
+        couture: { low: 5200, high: 6800, rate: 6000, durationBase: [16, 22] }
       };
 
       const disciplineMultipliers = {
@@ -832,9 +832,13 @@
         'outdoor-sanctuaries': { factor: 1.20, durationDelta: 1, label: 'Outdoor Sanctuaries' }
       };
 
+      function formatINR(val) {
+        return val.toLocaleString('en-IN');
+      }
+
       function calculateEstimator() {
         const area = parseInt(slider.value, 10);
-        areaVal.textContent = area.toLocaleString() + ' sq.ft';
+        areaVal.textContent = area.toLocaleString('en-IN') + ' sq.ft';
 
         const tier = tierRates[currentTier];
         const disc = disciplineMultipliers[currentDiscipline] || disciplineMultipliers['residential'];
@@ -846,8 +850,8 @@
         const budgetLow = Math.round(area * rateLow);
         const budgetHigh = Math.round(area * rateHigh);
 
-        budgetOutput.innerHTML = '$' + budgetLow.toLocaleString() + ' &ndash; $' + budgetHigh.toLocaleString();
-        rateOutput.textContent = '$' + avgRate + ' / sq.ft';
+        budgetOutput.innerHTML = '₹' + formatINR(budgetLow) + ' &ndash; ₹' + formatINR(budgetHigh);
+        rateOutput.textContent = '₹' + formatINR(avgRate) + ' / sq.ft';
 
         // Calculate dynamic duration scaling with area
         const scaleFactor = Math.sqrt(area / 2500);
@@ -862,7 +866,7 @@
           disciplineBtns.forEach(b => {
             b.className = 'discipline-btn py-3 px-2 sm:px-3 rounded-sm text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all bg-charcoal-card text-neutral-300 border border-white/10 hover:border-gold/40 cursor-pointer';
           });
-          btn.className = 'discipline-btn py-3 px-2 sm:px-3 rounded-sm text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all bg-gold text-charcoal-950 font-semibold border border-gold cursor-pointer shadow-sm';
+          btn.className = 'discipline-btn py-3 px-2 sm:px-3 rounded-sm text-[11px] sm:text-xs uppercase tracking-wider text-center transition-all bg-gold !text-charcoal-950 font-semibold border border-gold cursor-pointer shadow-sm';
           currentDiscipline = btn.dataset.discipline;
           calculateEstimator();
         });
@@ -878,11 +882,11 @@
             if (title) title.className = 'text-xs uppercase tracking-wider font-semibold text-neutral-200';
             if (sub) sub.className = 'text-[9.5px] text-neutral-400 font-light mt-0.5';
           });
-          btn.className = 'tier-btn py-3.5 px-3 rounded-sm text-center border border-gold bg-gold text-charcoal-950 transition-all flex flex-col items-center justify-center cursor-pointer shadow-sm';
+          btn.className = 'tier-btn py-3.5 px-3 rounded-sm text-center border border-gold bg-gold !text-charcoal-950 transition-all flex flex-col items-center justify-center cursor-pointer shadow-sm';
           const title = btn.querySelector('span:first-child');
           const sub = btn.querySelector('span:last-child');
-          if (title) title.className = 'text-xs uppercase tracking-wider font-semibold text-charcoal-950';
-          if (sub) sub.className = 'text-[9.5px] text-charcoal-900 font-medium mt-0.5';
+          if (title) title.className = 'text-xs uppercase tracking-wider font-semibold !text-charcoal-950';
+          if (sub) sub.className = 'text-[9.5px] !text-charcoal-900 font-medium mt-0.5';
 
           currentTier = btn.dataset.tier;
           calculateEstimator();
@@ -900,7 +904,7 @@
           const tierName = currentTier.charAt(0).toUpperCase() + currentTier.slice(1);
 
           if (window.atelierToast) {
-            window.atelierToast.show(`Configuration Locked: ${parseInt(area).toLocaleString()} sq.ft ${discName} (${tierName} Tier). Transferring to consultation...`, 'success', 3500);
+            window.atelierToast.show(`Configuration Locked: ${parseInt(area).toLocaleString('en-IN')} sq.ft ${discName} (${tierName} Tier). Transferring to consultation...`, 'success', 3500);
           }
 
           setTimeout(() => {

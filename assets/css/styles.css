@@ -419,23 +419,34 @@ section {
    ========================================================================== */
 
 /* 1. Gold / Olive Buttons: Always high-contrast dark text on gold surface */
-a.bg-gold:not(:hover),
-button.bg-gold:not(:hover),
-a.bg-olive:not(:hover),
-button.bg-olive:not(:hover) {
-  color: #0a0a08 !important;
+a.bg-gold,
+button.bg-gold,
+a.bg-olive,
+button.bg-olive,
+#estimator button.bg-gold,
+#estimator .discipline-btn.bg-gold,
+#estimator .tier-btn.bg-gold,
+#estimator #lock-config-btn,
+#estimator #lock-config-btn:hover {
+  color: #11120f !important;
 }
 
-a.bg-gold:not(:hover) i,
-button.bg-gold:not(:hover) i,
-a.bg-olive:not(:hover) i,
-button.bg-olive:not(:hover) i,
-a.bg-gold:not(:hover) svg,
-button.bg-gold:not(:hover) svg,
-a.bg-olive:not(:hover) svg,
-button.bg-olive:not(:hover) svg {
-  color: #0a0a08 !important;
-  stroke: #0a0a08 !important;
+#estimator button.bg-gold *,
+#estimator .tier-btn.bg-gold span,
+#estimator .discipline-btn.bg-gold span {
+  color: #11120f !important;
+}
+
+a.bg-gold i,
+button.bg-gold i,
+a.bg-olive i,
+button.bg-olive i,
+a.bg-gold svg,
+button.bg-gold svg,
+a.bg-olive svg,
+button.bg-olive svg {
+  color: #11120f !important;
+  stroke: #11120f !important;
 }
 
 /* 2. Newsletter Inputs: High-contrast legible text & placeholder */
@@ -552,7 +563,6 @@ html:not(.dark) #hero .btn,
 html:not(.dark) #estimator .text-gold,
 html:not(.dark) #estimator #area-val,
 html:not(.dark) #estimator #budget-output,
-html:not(.dark) #estimator button.bg-gold,
 html:not(.dark) .bg-charcoal .text-gold,
 html:not(.dark) .bg-charcoal-950 .text-gold,
 html:not(.dark) .bg-charcoal-900 .text-gold,
