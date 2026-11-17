@@ -558,3 +558,47 @@ html.dark .page-hero-banner {
   }
 }
 
+/* ==========================================================================
+   Project Cost & Timeline Estimator (Interactive Planning Tool)
+   ========================================================================== */
+input[type=range].estimator-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type=range].estimator-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #d5c3a5;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(213, 195, 165, 0.55);
+  border: 2px solid #171813;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type=range].estimator-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 14px rgba(213, 195, 165, 0.9);
+}
+
+input[type=range].estimator-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #d5c3a5;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(213, 195, 165, 0.55);
+  border: 2px solid #171813;
+}
+
+

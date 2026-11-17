@@ -607,6 +607,118 @@
     </div>
   </section>
 
+  <!-- INTERACTIVE PLANNING TOOL: PROJECT COST & TIMELINE ESTIMATOR -->
+  <section id="estimator" class="py-24 sm:py-32 bg-[#11120f] text-ivory border-t border-charcoal-800 relative overflow-hidden">
+    <!-- Ambient architectural backdrop glow -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Tool Narrative & Guarantee -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-[10.5px] uppercase tracking-[0.28em] text-gold font-semibold block">Interactive Planning Tool</span>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-[54px] font-normal leading-[1.08] text-ivory tracking-tight" style="font-family: 'Playfair Display', serif;">
+            Project Cost &amp; Timeline<br>Estimator
+          </h2>
+          <p class="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed max-w-md">
+            Calibrate your anticipated area, scope tier, and discipline to generate an immediate budgetary range and structural timeline based on 2026 atelier index rates.
+          </p>
+          <div class="pt-2 flex items-center gap-3 text-xs text-neutral-400 font-light border-t border-white/10 pt-5">
+            <i data-lucide="circle-dot" class="w-4 h-4 text-gold flex-shrink-0"></i>
+            <span>Fixed-price contracts guaranteed upon technical drawing sign-off.</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Estimator Calculator Card -->
+        <div class="lg:col-span-7">
+          <div class="bg-[#171813] border border-charcoal-border rounded-sm p-6 sm:p-8 lg:p-10 shadow-2xl space-y-7">
+            
+            <!-- 1. PROJECT DISCIPLINE -->
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.24em] text-neutral-400 font-semibold block mb-3">Project Discipline</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="estimator-discipline-group">
+                <button type="button" data-discipline="residential" class="discipline-btn py-3 px-3 rounded-sm text-xs uppercase tracking-wider text-center transition-all bg-gold text-charcoal-950 font-semibold border border-gold cursor-pointer shadow-sm">
+                  Residential
+                </button>
+                <button type="button" data-discipline="commercial" class="discipline-btn py-3 px-3 rounded-sm text-xs uppercase tracking-wider text-center transition-all bg-charcoal-card text-neutral-300 border border-white/10 hover:border-gold/40 cursor-pointer">
+                  Commercial
+                </button>
+                <button type="button" data-discipline="kitchen" class="discipline-btn py-3 px-3 rounded-sm text-xs uppercase tracking-wider text-center transition-all bg-charcoal-card text-neutral-300 border border-white/10 hover:border-gold/40 cursor-pointer">
+                  Kitchen
+                </button>
+                <button type="button" data-discipline="turnkey" class="discipline-btn py-3 px-3 rounded-sm text-xs uppercase tracking-wider text-center transition-all bg-charcoal-card text-neutral-300 border border-white/10 hover:border-gold/40 cursor-pointer">
+                  Turnkey
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. PROPERTY AREA (SQ.FT) -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <label for="area-slider" class="text-[10px] uppercase tracking-[0.24em] text-neutral-400 font-semibold">Property Area (Sq.Ft)</label>
+                <span id="area-val" class="font-serif text-lg text-gold font-normal tracking-wide">2,500 sq.ft</span>
+              </div>
+              <div class="py-2">
+                <input type="range" id="area-slider" min="600" max="10000" step="50" value="2500" class="estimator-slider">
+              </div>
+              <div class="flex justify-between text-[10px] text-neutral-500 font-mono tracking-wider pt-1">
+                <span>600 sq.ft</span>
+                <span>5,000 sq.ft</span>
+                <span>10,000 sq.ft</span>
+              </div>
+            </div>
+
+            <!-- 3. MATERIAL & FINISH STANDARD -->
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.24em] text-neutral-400 font-semibold block mb-3">Material &amp; Finish Standard</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="estimator-tier-group">
+                <button type="button" data-tier="essential" class="tier-btn py-3.5 px-3 rounded-sm text-center border border-white/10 bg-charcoal-card hover:border-gold/40 transition-all flex flex-col items-center justify-center cursor-pointer group">
+                  <span class="text-xs uppercase tracking-wider font-semibold text-neutral-200">Essential</span>
+                  <span class="text-[9.5px] text-neutral-400 font-light mt-0.5">Custom millwork</span>
+                </button>
+                <button type="button" data-tier="signature" class="tier-btn py-3.5 px-3 rounded-sm text-center border border-gold bg-gold text-charcoal-950 transition-all flex flex-col items-center justify-center cursor-pointer shadow-sm">
+                  <span class="text-xs uppercase tracking-wider font-semibold text-charcoal-950">Signature</span>
+                  <span class="text-[9.5px] text-charcoal-900 font-medium mt-0.5">Bookmatched stone</span>
+                </button>
+                <button type="button" data-tier="couture" class="tier-btn py-3.5 px-3 rounded-sm text-center border border-white/10 bg-charcoal-card hover:border-gold/40 transition-all flex flex-col items-center justify-center cursor-pointer group">
+                  <span class="text-xs uppercase tracking-wider font-semibold text-neutral-200">Haute Couture</span>
+                  <span class="text-[9.5px] text-neutral-400 font-light mt-0.5">Quarry selections</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4. ESTIMATED BUDGET DISPLAY BOX -->
+            <div class="border border-white/10 bg-black/35 rounded-sm p-5 sm:p-6 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-neutral-400 font-medium">Estimated Budget:</span>
+                <span id="budget-output" class="font-serif text-2xl sm:text-3xl lg:text-[32px] text-gold font-light tracking-tight text-right">$90,250 &ndash; $112,100</span>
+              </div>
+              <div class="h-px bg-white/10"></div>
+              <div class="flex items-center justify-between text-xs sm:text-sm">
+                <span class="text-neutral-400 font-light">Project Duration:</span>
+                <span id="duration-output" class="font-mono text-neutral-200 font-medium">10 &ndash; 14 Weeks</span>
+              </div>
+              <div class="h-px bg-white/10"></div>
+              <div class="flex items-center justify-between text-xs sm:text-sm">
+                <span class="text-neutral-400 font-light">Architectural Rate:</span>
+                <span id="rate-output" class="font-mono text-neutral-200 font-medium">$38 / sq.ft</span>
+              </div>
+            </div>
+
+            <!-- 5. ACTION BUTTON -->
+            <button type="button" id="lock-config-btn" class="w-full py-4 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs sm:text-[12.5px] uppercase tracking-[0.22em] font-semibold rounded-sm shadow-xl transition-all duration-300 text-center block border border-gold cursor-pointer">
+              Lock Configuration &amp; Request Consultation
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- VIP PRIVATE ADVISORY CTA -->
   <section class="py-32 bg-charcoal-950 text-ivory text-center px-4 relative overflow-hidden border-t border-charcoal-800">
     <div class="max-w-3xl mx-auto space-y-6 relative z-10">
@@ -689,5 +801,115 @@
   <script src="assets/js/app.js"></script>
   <script src="assets/js/gallery.js"></script>
   <script src="assets/js/forms.js"></script>
+
+  <!-- INTERACTIVE ESTIMATOR CONTROLLER -->
+  <script>
+    (function () {
+      const slider = document.getElementById('area-slider');
+      const areaVal = document.getElementById('area-val');
+      const budgetOutput = document.getElementById('budget-output');
+      const durationOutput = document.getElementById('duration-output');
+      const rateOutput = document.getElementById('rate-output');
+      const disciplineBtns = document.querySelectorAll('.discipline-btn');
+      const tierBtns = document.querySelectorAll('.tier-btn');
+      const lockBtn = document.getElementById('lock-config-btn');
+
+      if (!slider || !budgetOutput) return;
+
+      let currentDiscipline = 'residential';
+      let currentTier = 'signature';
+
+      const tierRates = {
+        essential: { low: 22.50, high: 28.00, rate: 25, durationBase: [6, 9] },
+        signature: { low: 36.10, high: 44.84, rate: 38, durationBase: [10, 14] },
+        couture: { low: 58.50, high: 76.00, rate: 64, durationBase: [16, 22] }
+      };
+
+      const disciplineMultipliers = {
+        residential: { factor: 1.0, durationDelta: 0 },
+        commercial: { factor: 1.15, durationDelta: 2 },
+        kitchen: { factor: 1.25, durationDelta: -1 },
+        turnkey: { factor: 1.35, durationDelta: 3 }
+      };
+
+      function calculateEstimator() {
+        const area = parseInt(slider.value, 10);
+        areaVal.textContent = area.toLocaleString() + ' sq.ft';
+
+        const tier = tierRates[currentTier];
+        const disc = disciplineMultipliers[currentDiscipline];
+
+        const rateLow = tier.low * disc.factor;
+        const rateHigh = tier.high * disc.factor;
+        const avgRate = Math.round(tier.rate * disc.factor);
+
+        const budgetLow = Math.round(area * rateLow);
+        const budgetHigh = Math.round(area * rateHigh);
+
+        budgetOutput.innerHTML = '$' + budgetLow.toLocaleString() + ' &ndash; $' + budgetHigh.toLocaleString();
+        rateOutput.textContent = '$' + avgRate + ' / sq.ft';
+
+        // Calculate dynamic duration scaling with area
+        const scaleFactor = Math.sqrt(area / 2500);
+        const durLow = Math.max(4, Math.round(tier.durationBase[0] * scaleFactor + disc.durationDelta));
+        const durHigh = Math.max(durLow + 2, Math.round(tier.durationBase[1] * scaleFactor + disc.durationDelta));
+        durationOutput.innerHTML = durLow + ' &ndash; ' + durHigh + ' Weeks';
+      }
+
+      // Discipline selector
+      disciplineBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          disciplineBtns.forEach(b => {
+            b.className = 'discipline-btn py-3 px-3 rounded-sm text-xs uppercase tracking-wider text-center transition-all bg-charcoal-card text-neutral-300 border border-white/10 hover:border-gold/40 cursor-pointer';
+          });
+          btn.className = 'discipline-btn py-3 px-3 rounded-sm text-xs uppercase tracking-wider text-center transition-all bg-gold text-charcoal-950 font-semibold border border-gold cursor-pointer shadow-sm';
+          currentDiscipline = btn.dataset.discipline;
+          calculateEstimator();
+        });
+      });
+
+      // Tier selector
+      tierBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tierBtns.forEach(b => {
+            b.className = 'tier-btn py-3.5 px-3 rounded-sm text-center border border-white/10 bg-charcoal-card hover:border-gold/40 transition-all flex flex-col items-center justify-center cursor-pointer group';
+            const title = b.querySelector('span:first-child');
+            const sub = b.querySelector('span:last-child');
+            if (title) title.className = 'text-xs uppercase tracking-wider font-semibold text-neutral-200';
+            if (sub) sub.className = 'text-[9.5px] text-neutral-400 font-light mt-0.5';
+          });
+          btn.className = 'tier-btn py-3.5 px-3 rounded-sm text-center border border-gold bg-gold text-charcoal-950 transition-all flex flex-col items-center justify-center cursor-pointer shadow-sm';
+          const title = btn.querySelector('span:first-child');
+          const sub = btn.querySelector('span:last-child');
+          if (title) title.className = 'text-xs uppercase tracking-wider font-semibold text-charcoal-950';
+          if (sub) sub.className = 'text-[9.5px] text-charcoal-900 font-medium mt-0.5';
+
+          currentTier = btn.dataset.tier;
+          calculateEstimator();
+        });
+      });
+
+      slider.addEventListener('input', calculateEstimator);
+
+      // Lock configuration action
+      if (lockBtn) {
+        lockBtn.addEventListener('click', () => {
+          const area = slider.value;
+          const discName = currentDiscipline.charAt(0).toUpperCase() + currentDiscipline.slice(1);
+          const tierName = currentTier.charAt(0).toUpperCase() + currentTier.slice(1);
+
+          if (window.atelierToast) {
+            window.atelierToast.show(`Configuration Locked: ${parseInt(area).toLocaleString()} sq.ft ${discName} (${tierName} Tier). Transferring to consultation...`, 'success', 3500);
+          }
+
+          setTimeout(() => {
+            window.location.href = `contact.html?discipline=${encodeURIComponent(discName)}&area=${encodeURIComponent(area)}&tier=${encodeURIComponent(tierName)}`;
+          }, 800);
+        });
+      }
+
+      calculateEstimator();
+    })();
+  </script>
 </body>
 </html>
