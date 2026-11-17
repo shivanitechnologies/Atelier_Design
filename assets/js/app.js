@@ -166,6 +166,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Interactive Architectural Transformation Slider (Before & After)
+  const transformationSlider = document.getElementById('before-after-slider');
+  const beforeLayer = document.getElementById('slider-before-layer');
+  const handleLine = document.getElementById('slider-handle-line');
+
+  if (transformationSlider && beforeLayer && handleLine) {
+    let isDragging = false;
+    let currentPercent = 50;
+
+    function updateSlider(percent) {
+      percent = Math.max(1, Math.min(99, percent));
+      currentPercent = percent;
+      transformationSlider.setAttribute('aria-valuenow', Math.round(percent));
+
+      beforeLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      handleLine.style.left = `${percent}%`;
+    }
+
+    function getPercentFromEvent(e) {
+      const rect = transformationSlider.getBoundingClientRect();
+      const clientX = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const offsetX = clientX - rect.left;
+      return (offsetX / rect.width) * 100;
+    }
+
+    transformationSlider.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      transformationSlider.setPointerCapture(e.pointerId);
+      updateSlider(getPercentFromEvent(e));
+    });
+
+    transformationSlider.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      updateSlider(getPercentFromEvent(e));
+    });
+
+    const stopDrag = (e) => {
+      if (isDragging) {
+        isDragging = false;
+        try {
+          transformationSlider.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+      }
+    };
+
+    transformationSlider.addEventListener('pointerup', stopDrag);
+    transformationSlider.addEventListener('pointercancel', stopDrag);
+
+    // Keyboard navigation
+    transformationSlider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        updateSlider(currentPercent - 3);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        updateSlider(currentPercent + 3);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        updateSlider(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        updateSlider(100);
+      }
+    });
+  }
+
   // Global Toast Function
   window.showToast = function (message, type = 'success') {
     let container = document.getElementById('atelier-toast-container');
