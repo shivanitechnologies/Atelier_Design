@@ -462,74 +462,91 @@
     </div>
   </aside>
 
-    <!-- HAUTE EDITORIAL HERO SECTION (1 FULL-HD LUXURY SALON IMAGE) -->
-  <section class="hero relative min-h-[calc(100vh-80px)] min-h-[calc(100dvh-80px)] flex flex-col justify-start overflow-hidden bg-charcoal" id="hero">
-    <!-- 1 High-Definition Architectural Background Image -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <img src="assets/images/hd/completed_luxury_salon.jpg" 
-           alt="Haute Architectural Living Salon by ATELIER" 
-           class="w-full h-full object-cover object-center scale-100 transition-transform duration-1000 ease-out">
-      <!-- Luxury Architectural Vignette Gradient -->
-      <div class="hero-overlay absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(17,18,15,0.15) 0%, rgba(17,18,15,0.65) 100%), linear-gradient(180deg, rgba(17,18,15,0.72) 0%, rgba(17,18,15,0.22) 48%, rgba(17,18,15,0.85) 100%), linear-gradient(90deg, rgba(17,18,15,0.82) 0%, rgba(17,18,15,0.3) 60%, transparent 100%);"></div>
-    </div>
+  <!-- FORMA SCROLLYTELLING CANVAS HERO SECTION (600 FRAMES) -->
+  <section class="hero hero-sequence-container relative" id="hero" style="height: 500vh; background: #11120f;">
+    <div class="sticky-hero sticky top-0 h-screen w-full overflow-hidden bg-[#171813]">
 
-    <!-- Hero Narrative Content (Playfair Display + DM Sans Typography) -->
-    <div class="hero-content relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-12 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20 flex flex-col justify-start">
-      <div class="max-w-[92%] sm:max-w-[680px]">
-        <!-- Architectural Badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full border border-gold/40 bg-gold/10 text-gold text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.28em] font-medium mb-3 sm:mb-5 backdrop-blur-md">
-          <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
-          <span>Architecture &bull; Interior &bull; Lifestyle</span>
-        </div>
+      <!-- Canvas for 600-Frame Cinema Sequence -->
+      <canvas id="sequence" class="absolute inset-0 w-full h-full block object-cover"></canvas>
 
-        <h1 class="font-serif font-normal text-white tracking-tight leading-[1.06] text-3xl sm:text-5xl md:text-6xl lg:text-7xl" style="font-family: 'Playfair Display', serif;">
-          Spaces<br>
-          That <em class="text-gold italic font-normal" style="color: #d5c3a5;">Speak.</em>
-        </h1>
+      <!-- Ambient Vignette Gradient -->
+      <div class="overlay absolute inset-0 pointer-events-none" style="background: linear-gradient(90deg, rgba(0,0,0,0.52), transparent 75%), linear-gradient(0deg, rgba(0,0,0,0.55), transparent 55%);"></div>
 
-        <p class="hero-description text-xs sm:text-sm leading-relaxed sm:leading-[1.85] text-[#e1ded7] mt-2.5 sm:mt-6 max-w-sm sm:max-w-md font-light tracking-wide line-clamp-3 sm:line-clamp-none">
-          We create timeless interiors where architecture, craftsmanship and contemporary living come together in harmonious silence.
-        </p>
-
-        <!-- CTA Action Buttons -->
-        <div class="hero-actions pt-4 sm:pt-8 flex flex-row items-center gap-2.5 sm:gap-4 pointer-events-auto">
-          <a href="portfolio.html" class="btn flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-[10.5px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold transition-all duration-300 shadow-xl rounded-full inline-flex items-center justify-center gap-2 border border-gold whitespace-nowrap">
-            <span>Explore Archive</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-charcoal-950 rtl-flip"></i>
-          </a>
-          <a href="contact.html" class="btn flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3.5 bg-charcoal-950/70 hover:bg-charcoal text-ivory text-[10.5px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold transition-all duration-300 rounded-full inline-flex items-center justify-center gap-2 border border-gold/40 backdrop-blur-md whitespace-nowrap">
-            <span>Book Free Consultation</span>
-          </a>
-        </div>
-
-        <!-- Curated Metric Strip -->
-        <div class="hero-metrics grid grid-cols-3 gap-2 sm:gap-6 pt-3.5 sm:pt-8 mt-4 sm:mt-8 border-t border-ivory/15 max-w-lg">
-          <div>
-            <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">120+</span>
-            <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Estates Handed Over</span>
+      <!-- Hero Narrative Content (Playfair Display + DM Sans Typography) -->
+      <div class="hero-content absolute left-[6%] sm:left-[8%] lg:left-[10%] top-[48%] sm:top-[50%] -translate-y-1/2 max-w-[650px] z-20 pointer-events-none">
+        <div class="max-w-[92%] sm:max-w-[680px]">
+          <!-- Architectural Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full border border-gold/40 bg-gold/10 text-gold text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.28em] font-medium mb-3 sm:mb-5 backdrop-blur-md pointer-events-auto">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <span>Architecture &bull; Interior &bull; Lifestyle</span>
           </div>
-          <div>
-            <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">15+</span>
-            <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Global Awards</span>
+
+          <h1 class="font-serif font-normal text-white tracking-tight leading-[1.06] text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84px]" style="font-family: 'Playfair Display', serif;">
+            Spaces<br>
+            That <em class="text-gold italic font-normal" style="color: #d5c3a5;">Speak.</em>
+          </h1>
+
+          <p class="hero-description text-xs sm:text-sm leading-relaxed sm:leading-[1.85] text-[#e1ded7] mt-2.5 sm:mt-6 max-w-sm sm:max-w-md font-light tracking-wide line-clamp-3 sm:line-clamp-none">
+            We create timeless interiors where architecture, craftsmanship and contemporary living come together in harmonious silence.
+          </p>
+
+          <!-- CTA Action Buttons -->
+          <div class="hero-actions pt-4 sm:pt-8 flex flex-row items-center gap-2.5 sm:gap-4 pointer-events-auto">
+            <a href="portfolio.html" class="btn flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-[10.5px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold transition-all duration-300 shadow-xl rounded-full inline-flex items-center justify-center gap-2 border border-gold whitespace-nowrap">
+              <span>Explore Archive</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-charcoal-950 rtl-flip"></i>
+            </a>
+            <a href="contact.html" class="btn flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3.5 bg-charcoal-950/70 hover:bg-charcoal text-ivory text-[10.5px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold transition-all duration-300 rounded-full inline-flex items-center justify-center gap-2 border border-gold/40 backdrop-blur-md whitespace-nowrap">
+              <span>Book Free Consultation</span>
+            </a>
           </div>
-          <div>
-            <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">100%</span>
-            <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Turnkey Precision</span>
+
+          <!-- Curated Metric Strip -->
+          <div class="hero-metrics grid grid-cols-3 gap-2 sm:gap-6 pt-3.5 sm:pt-8 mt-4 sm:mt-8 border-t border-ivory/15 max-w-lg pointer-events-auto">
+            <div>
+              <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">120+</span>
+              <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Estates Handed Over</span>
+            </div>
+            <div>
+              <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">15+</span>
+              <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Global Awards</span>
+            </div>
+            <div>
+              <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">100%</span>
+              <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Turnkey Precision</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Hero Bottom Telemetry -->
-    <div class="hero-bottom absolute bottom-5 sm:bottom-8 left-4 right-4 sm:left-[6%] sm:right-[6%] flex items-center justify-between z-20 pointer-events-none">
-      <div class="scroll-indicator flex items-center gap-2.5 sm:gap-4 text-[9px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.28em] uppercase text-gold font-medium">
-        <span class="scroll-line w-8 sm:w-12 h-[1px] bg-gold"></span>
-        <span>Scroll to Explore</span>
+      <!-- Hero Bottom Telemetry: Scroll to Explore & Live Frame Counter -->
+      <div class="hero-bottom absolute bottom-6 sm:bottom-8 left-[6%] right-[6%] flex items-center justify-between z-20 pointer-events-none">
+        <div class="scroll-indicator flex items-center gap-2.5 sm:gap-4 text-[9px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.28em] uppercase text-gold font-medium">
+          <span class="scroll-line w-8 sm:w-12 h-[1px] bg-gold"></span>
+          <span>Scroll to Explore</span>
+        </div>
+
+        <div class="frame-counter text-[10px] sm:text-[11px] tracking-[2px] text-[#eee4d3] uppercase font-mono" id="counter">
+          001 / 600
+        </div>
       </div>
 
-      <div class="text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-[#eee4d3] uppercase font-mono">
-        ATELIER &bull; Haute Living
+      <!-- Live Scroll Progress Track -->
+      <div class="progress-track absolute bottom-0 left-0 w-full h-[2px] bg-white/15 z-20">
+        <div class="progress-bar h-full w-0 bg-[#d5c3a5]" id="progress"></div>
       </div>
+
+      <!-- Ambient Luxury Loading Screen Overlay -->
+      <div class="hero-loader absolute inset-0 z-50 flex items-center justify-center flex-col bg-[#171813] transition-all duration-700 ease-out" id="loader">
+        <div class="loader-logo font-serif text-3xl sm:text-4xl tracking-[7px] text-ivory">ATELIER</div>
+        <div class="loader-text text-[10px] tracking-[3px] text-[#c7b99e] mt-5 uppercase font-mono" id="loaderText">
+          PREPARING YOUR EXPERIENCE 0%
+        </div>
+        <div class="loader-track w-40 h-[1px] bg-[#45443b] mt-6 overflow-hidden">
+          <div class="loader-progress w-0 h-full bg-[#d5c3a5] transition-all duration-150" id="loaderProgress"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1129,6 +1146,7 @@
   <script src="assets/js/app.js"></script>
   <script src="assets/js/gallery.js"></script>
   <script src="assets/js/forms.js"></script>
+  <script src="assets/js/hero-sequence.js"></script>
 
   <!-- SCROLL REVEAL & INTERSECTION OBSERVER -->
   <script>
