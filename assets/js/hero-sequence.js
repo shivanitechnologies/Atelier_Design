@@ -1,6 +1,8 @@
 /**
  * FORMA Scrollytelling Sequence Canvas Controller (600 Frames)
  * ATELIER Interior Design Studio - Home Page 1
+ * 
+ * Optimized for rock-solid stability (Zero-shake) and smooth, relaxed pacing.
  */
 
 (function () {
@@ -29,34 +31,42 @@
     return `frames/frame_${String(index).padStart(4, "0")}.jpg`;
   }
 
-  // Pre-instantiate initial fallback image
-  const fallbackImg = new Image();
-  fallbackImg.src = framePath(1);
-  let hasFallback = false;
-  fallbackImg.onload = () => {
-    hasFallback = true;
-    if (lastDrawnFrame === -1) drawFrame(0);
+  // Pre-load frame 1 as anchor
+  const anchorImg = new Image();
+  anchorImg.src = framePath(1);
+  anchorImg.onload = () => {
+    images[0] = anchorImg;
+    if (lastDrawnFrame === -1) {
+      drawFrame(0);
+    }
   };
 
-  function getBestFrame(index) {
+  /**
+   * Safe Frame Retrieval:
+   * NEVER jumps forward or to distant frames.
+   * Only looks backward by up to 2 frames if a single frame is pending.
+   * If not available, returns null so canvas retains last drawn image without flickering.
+   */
+  function getSafeFrame(index) {
     if (images[index] && images[index].complete && images[index].naturalWidth) {
       return images[index];
     }
-    // Search backward for closest loaded frame
-    for (let i = index - 1; i >= 0; i--) {
-      if (images[i] && images[i].complete && images[i].naturalWidth) return images[i];
+    // Check immediate previous 2 frames only
+    for (let i = index - 1; i >= Math.max(0, index - 2); i--) {
+      if (images[i] && images[i].complete && images[i].naturalWidth) {
+        return images[i];
+      }
     }
-    // Search forward for closest loaded frame
-    for (let i = index + 1; i < frameCount; i++) {
-      if (images[i] && images[i].complete && images[i].naturalWidth) return images[i];
-    }
-    return hasFallback ? fallbackImg : null;
+    return null;
   }
 
   // Draw frame with object-cover aspect ratio
   function drawFrame(index) {
-    const img = getBestFrame(index);
-    if (!img || !img.complete || !img.naturalWidth) return;
+    const img = getSafeFrame(index);
+    // If target frame is not ready, KEEP current canvas content without clearing or jumping
+    if (!img || !img.complete || !img.naturalWidth) {
+      return;
+    }
 
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -83,7 +93,7 @@
     lastDrawnFrame = index;
   }
 
-  // Handle responsive canvas sizing with device pixel ratio
+  // Responsive canvas sizing with DPR scaling
   function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
@@ -96,7 +106,7 @@
     drawFrame(Math.round(currentFrame));
   }
 
-  // Calculate scroll progress through 500vh hero section
+  // Calculate scroll progress through extended 850vh hero section (slower, relaxed speed)
   function updateScrollTarget() {
     if (!hero) return;
 
@@ -110,12 +120,12 @@
     targetFrame = scrollProgress * (frameCount - 1);
   }
 
-  // Silky 60fps/120fps interpolation animation loop
+  // Smooth, relaxed interpolation loop (gentle 0.08 lerp for cinematographic slow pacing)
   function animationLoop() {
     const delta = targetFrame - currentFrame;
     if (Math.abs(delta) > 0.005) {
-      // Exponential lerp easing
-      currentFrame += delta * 0.16;
+      // Gentle damping factor (0.08) eliminates violent acceleration and jitter
+      currentFrame += delta * 0.08;
     } else {
       currentFrame = targetFrame;
     }
@@ -129,9 +139,9 @@
       counter.textContent = `${String(frameToDraw + 1).padStart(3, "0")} / 600`;
     }
 
-    if (progress) {
-      const scrollableDistance = hero ? hero.offsetHeight - window.innerHeight : 1;
-      const rect = hero ? hero.getBoundingClientRect() : { top: 0 };
+    if (progress && hero) {
+      const scrollableDistance = hero.offsetHeight - window.innerHeight;
+      const rect = hero.getBoundingClientRect();
       const scrolled = Math.max(0, Math.min(scrollableDistance, -rect.top));
       const pct = scrollableDistance > 0 ? (scrolled / scrollableDistance) * 100 : 0;
       progress.style.width = `${pct}%`;
@@ -140,7 +150,7 @@
     requestAnimationFrame(animationLoop);
   }
 
-  // Intelligent Prioritized Image Loader
+  // Sequential, Pipeline-Controlled Image Loader
   function loadImages() {
     return new Promise((resolve) => {
       const unlock = () => {
@@ -159,57 +169,55 @@
         }
       };
 
-      // 1. High priority batch: first 30 frames for instantaneous responsiveness
-      let initialCount = 0;
-      for (let i = 0; i < 30; i++) {
-        const img = new Image();
-        img.src = framePath(i + 1);
-        img.onload = () => {
-          initialCount++;
-          loadedCount++;
-          const pct = Math.round((loadedCount / frameCount) * 100);
-          if (loaderText) loaderText.textContent = `PREPARING YOUR EXPERIENCE ${pct}%`;
-          if (loaderProgress) loaderProgress.style.width = `${pct}%`;
-          if (initialCount >= 10) unlock();
-        };
-        img.onerror = () => {
-          initialCount++;
-          loadedCount++;
-          if (initialCount >= 10) unlock();
-        };
-        images[i] = img;
-      }
+      // Strict sequential order loader to ensure continuous contiguous buffer
+      let nextIndexToLoad = 0;
+      const maxConcurrent = 12; // Maintain up to 12 active connections in strict numerical order
+      let activeRequests = 0;
 
-      // 2. Progressive background batch loader (50 frames per batch)
-      let batchIdx = 30;
-      function loadNextBatch() {
-        const batchEnd = Math.min(frameCount, batchIdx + 50);
-        for (let i = batchIdx; i < batchEnd; i++) {
+      function spawnNext() {
+        while (activeRequests < maxConcurrent && nextIndexToLoad < frameCount) {
+          const idx = nextIndexToLoad++;
+          activeRequests++;
+
           const img = new Image();
-          img.src = framePath(i + 1);
+          img.src = framePath(idx + 1);
+
           img.onload = () => {
+            images[idx] = img;
             loadedCount++;
+            activeRequests--;
+
             const pct = Math.round((loadedCount / frameCount) * 100);
-            if (loaderText && !isUnlocked) loaderText.textContent = `PREPARING YOUR EXPERIENCE ${pct}%`;
-            if (loaderProgress && !isUnlocked) loaderProgress.style.width = `${pct}%`;
-            if (loadedCount >= frameCount) unlock();
+            if (loaderText) loaderText.textContent = `PREPARING YOUR EXPERIENCE ${pct}%`;
+            if (loaderProgress) loaderProgress.style.width = `${pct}%`;
+
+            // Unlock once first 50 contiguous frames are ready
+            if (loadedCount >= 50) {
+              unlock();
+            }
+
+            spawnNext();
           };
+
           img.onerror = () => {
             loadedCount++;
-            if (loadedCount >= frameCount) unlock();
+            activeRequests--;
+            if (loadedCount >= 50) {
+              unlock();
+            }
+            spawnNext();
           };
-          images[i] = img;
         }
-        batchIdx = batchEnd;
-        if (batchIdx < frameCount) {
-          setTimeout(loadNextBatch, 25);
+
+        if (loadedCount >= frameCount) {
+          unlock();
         }
       }
 
-      setTimeout(loadNextBatch, 50);
+      spawnNext();
 
-      // Safety fallback: unlock after 1.2s max so user experience is never blocked
-      setTimeout(unlock, 1200);
+      // Maximum safety fallback (2.0s)
+      setTimeout(unlock, 2000);
     });
   }
 
