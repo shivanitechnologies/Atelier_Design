@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATELIER — A Quieter Kind of Luxury | Architectural Interior Studio</title>
+  <meta name="description" content="ATELIER is an international architectural interior design studio crafting private residential sanctuaries, executive office environments, and modular kitchens.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ATELIER — Haute Architectural Interiors">
+  <meta property="og:description" content="Spaces with Soul. Designed with Intention. A quieter kind of luxury.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Cormorant Garamond + Cinzel + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN with Enhanced Luxury Tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            secondary: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              light: '#e9e4db'
+            },
+            olive: {
+              DEFAULT: '#d5c3a5',
+              50: '#faf8f5',
+              100: '#f4ede1',
+              200: '#e8ded0',
+              300: '#ded0bc',
+              400: '#d5c3a5',
+              500: '#d5c3a5',
+              600: '#b8a584',
+              700: '#9b8765',
+              800: '#756346',
+              900: '#473a25'
+            },
+            gold: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            ivory: {
+              DEFAULT: '#e9e4db',
+              light: '#f5f2ec',
+              dark: '#ded7cb',
+              muted: '#d2cbbe'
+            },
+            charcoal: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              700: '#27271f',
+              800: '#1b1c17',
+              900: '#11120f',
+              950: '#0a0a08'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            monument: ['"Cinzel"', '"Cormorant Garamond"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    #loader.hidden,
+    .loader.hidden,
+    .hero-loader.hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      display: none !important;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Page animation */
+    body {
+      animation: pageLoad 1.2s ease;
+    }
+
+    @keyframes pageLoad {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Hero animation */
+    .hero h1 {
+      animation: slideUp 1s ease forwards;
+    }
+
+    .hero p {
+      animation: slideUp 1.3s ease forwards;
+    }
+
+    .hero .btn,
+    .hero .hero-actions a {
+      animation: slideUp 1.6s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(45px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Navigation hover */
+    nav a {
+      position: relative;
+      transition: color 0.4s ease;
+    }
+
+    nav a:hover {
+      color: #c9ae83;
+    }
+
+    /* Button transition */
+    .btn {
+      transition: all 0.4s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    }
+
+    /* Gallery images */
+    .gallery img {
+      transition: transform 0.7s ease,
+                  filter 0.7s ease;
+    }
+
+    .gallery div {
+      overflow: hidden;
+    }
+
+    .gallery div:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.85);
+    }
+
+    /* Gallery text */
+    .gallery h3 {
+      transition: color 0.4s ease,
+                  transform 0.4s ease;
+    }
+
+    .gallery div:hover h3 {
+      color: #a5875b;
+      transform: translateY(-5px);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease,
+                  transform 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Smooth section transitions */
+    section {
+      transition: background 0.5s ease;
+    }
+
+    /* Keep sticky 3D hero working seamlessly without transform interference */
+    .hero.reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+</head>
+<body class="bg-ivory dark:bg-charcoal text-charcoal-900 dark:text-ivory font-sans transition-colors duration-400 bg-grain selection:bg-olive selection:text-ivory">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 transition-all duration-300 bg-ivory/90 dark:bg-charcoal/90 border-b border-atelier backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Architectural Monogram & Wordmark -->
+      <a href="index.html" class="flex items-center gap-3.5 group flex-shrink-0">
+        <div class="w-10 h-10 rounded-sm bg-charcoal dark:bg-olive flex items-center justify-center text-ivory font-monument font-semibold text-xl shadow-md transition-all duration-500 group-hover:bg-olive dark:group-hover:bg-gold border border-gold/30">
+          A
+        </div>
+        <div>
+          <span class="font-monument text-xl tracking-[0.28em] font-semibold text-charcoal-900 dark:text-ivory block leading-none">ATELIER</span>
+          <span class="text-[8.5px] tracking-[0.3em] text-olive dark:text-gold font-medium uppercase block mt-1">Architecture &bull; Interiors</span>
+        </div>
+      </a>
+
+                  <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-[10.5px] xl:text-[11px] uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium text-neutral-600 dark:text-neutral-300 whitespace-nowrap flex-nowrap">
+        <!-- Home Editions Dropdown (like requested image) -->
+        <div class="relative group/home py-2 home-dropdown-wrapper" id="home-dropdown-wrapper">
+          <button type="button" class="flex items-center gap-1.5 py-1.5 uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium transition whitespace-nowrap cursor-pointer text-olive dark:text-gold font-semibold border-b-2 border-olive dark:border-gold" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <i data-lucide="chevron-down" id="home-dropdown-chevron" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/home:rotate-180 text-olive dark:text-gold"></i>
+          </button>
+          
+          <!-- Dropdown Card -->
+          <div class="home-dropdown-menu absolute top-full left-0 pt-2 w-64 opacity-0 translate-y-2 pointer-events-none group-hover/home:opacity-100 group-hover/home:translate-y-0 group-hover/home:pointer-events-auto transition-all duration-200 z-50">
+            <div class="bg-ivory dark:bg-charcoal-card border border-atelier rounded-lg shadow-2xl p-2 space-y-1 backdrop-blur-xl">
+              
+              <!-- Home 1 (Classic) -->
+              <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-semibold transition bg-charcoal/10 dark:bg-gold/15 text-charcoal-950 dark:text-gold border-l-2 border-charcoal-950 dark:border-gold">
+                <div class="w-7 h-7 rounded flex items-center justify-center bg-charcoal dark:bg-gold text-ivory dark:text-charcoal-950 transition shrink-0 shadow-sm">
+                  <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="text-left">
+                  <span class="block text-[11px] uppercase tracking-wider font-semibold text-charcoal-950 dark:text-gold">Home 1 (Classic)</span>
+                  <span class="block text-[9px] text-neutral-600 dark:text-neutral-400 font-normal lowercase tracking-normal">editorial sanctuary</span>
+                </div>
+              </a>
+
+              <!-- Home 2 (Premium) -->
+              <a href="home-2.html" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium transition text-charcoal-800 dark:text-ivory hover:text-charcoal-950 dark:hover:text-gold hover:bg-charcoal/5 dark:hover:bg-gold/10 group/item">
+                <div class="w-7 h-7 rounded flex items-center justify-center bg-charcoal/10 dark:bg-charcoal-surface text-charcoal-900 dark:text-gold group-hover/item:bg-charcoal group-hover/item:text-ivory dark:group-hover/item:bg-gold dark:group-hover/item:text-charcoal-950 transition shrink-0 border border-charcoal/10 dark:border-gold/20">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="text-left">
+                  <span class="block text-[11px] uppercase tracking-wider font-semibold text-charcoal-900 dark:text-ivory group-hover/item:text-charcoal-950 dark:group-hover/item:text-gold">Home 2 (Premium)</span>
+                  <span class="block text-[9px] text-neutral-600 dark:text-neutral-400 font-normal lowercase tracking-normal">curated split-screen</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">About</a>
+        <a href="services.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Services</a>
+        <a href="portfolio.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Portfolio</a>
+        <a href="process.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Process</a>
+        <a href="contact.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Contact</a>
+      </nav>
+
+            <!-- Action Controls -->
+                  <div class="flex items-center gap-2.5 flex-shrink-0">
+        <!-- 1. Theme Toggle: Gold-Bordered Circle with Sun / Moon (as in 1st image) -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Theme" title="Toggle Light / Dark Sanctuary">
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3.5"/>
+            <line x1="12" y1="2" x2="12" y2="4.5"/>
+            <line x1="12" y1="19.5" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="4.5" y2="12"/>
+            <line x1="19.5" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+            <line x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+            <line x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+            <line x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+          </svg>
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-moon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <!-- 2. RTL Toggle: Gold-Bordered Circle with Opposing Horizontal Arrows (as in 1st image) -->
+        <button class="rtl-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction">
+          <svg class="w-4 h-4 text-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 7-4 3.5 4 3.5"/>
+            <path d="M4 10.5h16"/>
+            <path d="m16 13.5 4 3.5-4 3.5"/>
+            <path d="M20 17H4"/>
+          </svg>
+          <span class="sr-only rtl-text">RTL</span>
+        </button>
+
+        <!-- 3. CTA Button: Book Free Consultation -->
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center h-9 px-5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs font-semibold uppercase tracking-[0.14em] rounded-full shadow-md transition-all duration-300 whitespace-nowrap flex-shrink-0 border border-gold">
+          <span>Book Free Consultation</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobile-menu-toggle" class="lg:hidden p-2 text-charcoal-900 dark:text-ivory hover:text-gold transition flex-shrink-0" aria-label="Open Navigation Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div></div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-charcoal-950/80 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
+  <aside id="mobile-menu" class="fixed inset-0 w-full h-full bg-ivory dark:bg-charcoal-900 z-50 p-6 sm:p-8 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 pointer-events-none border-l border-atelier overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-5 border-b border-atelier">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-sm bg-charcoal dark:bg-olive flex items-center justify-center text-ivory font-monument font-bold text-lg shadow-sm border border-gold/30">A</div>
+          <div>
+            <span class="font-monument tracking-[0.24em] font-semibold text-base text-charcoal-900 dark:text-ivory block leading-none">ATELIER</span>
+            <span class="text-[8px] tracking-[0.25em] text-olive dark:text-gold font-medium uppercase block mt-1">Architecture &bull; Interiors</span>
+          </div>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- 1. Mobile Theme Toggle: Gold-Bordered Circle with Sun / Moon -->
+          <button class="theme-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Theme" title="Toggle Light / Dark Sanctuary">
+            <svg class="w-4 h-4 text-gold flex-shrink-0 icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3.5"/>
+              <line x1="12" y1="2" x2="12" y2="4.5"/>
+              <line x1="12" y1="19.5" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="4.5" y2="12"/>
+              <line x1="19.5" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+              <line x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+              <line x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+              <line x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+            </svg>
+            <svg class="w-4 h-4 text-gold flex-shrink-0 icon-moon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+          </button>
+
+          <!-- 2. Mobile RTL Toggle: Gold-Bordered Circle with Opposing Horizontal Arrows -->
+          <button class="rtl-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction">
+            <svg class="w-4 h-4 text-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m8 7-4 3.5 4 3.5"/>
+              <path d="M4 10.5h16"/>
+              <path d="m16 13.5 4 3.5-4 3.5"/>
+              <path d="M20 17H4"/>
+            </svg>
+            <span class="sr-only rtl-text">RTL</span>
+          </button>
+
+          <!-- Mobile Menu Close Button -->
+          <button id="mobile-menu-close" class="w-9 h-9 rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-gold p-0 text-neutral-600 dark:text-neutral-400 hover:text-gold transition flex items-center justify-center" aria-label="Close menu">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav class="flex flex-col gap-1 mt-6 text-xs uppercase tracking-[0.2em] font-medium">
+        <a href="index.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between text-olive dark:text-gold font-semibold">
+          <span>Home 01 (Classic)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="home-2.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Home 02 (Premium)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="about.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>About Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="services.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Services</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="service-details.html" class="py-2 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold pl-5 text-[11px] text-neutral-500 flex items-center justify-between ">
+          <span>&rarr; Service Details</span>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="portfolio.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Portfolio Archive</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="process.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Design Process</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="pricing.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Pricing & Tiers</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="blog.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Journal / Blog</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="contact.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Contact Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-atelier space-y-4 my-4">
+      <div class="flex items-center justify-between text-xs">
+        <span class="uppercase tracking-widest text-neutral-500">Private Portal</span>
+        <div class="flex gap-3 font-semibold">
+          <a href="login.html" class="hover:text-olive dark:hover:text-gold">Sign In</a>
+          <span class="text-neutral-400">/</span>
+          <a href="register.html" class="text-gold">Register</a>
+        </div>
+      </div>
+      <a href="contact.html" class="w-full py-3.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center rounded-full shadow-md border border-gold transition-all duration-300">Book Free Consultation</a>
+    </div>
+  </aside>
+
+    <!-- HAUTE EDITORIAL HERO SECTION (1 FULL-HD LUXURY SALON IMAGE) -->
+  <section class="hero relative min-h-screen flex items-center overflow-hidden bg-charcoal" id="hero">
+    <!-- 1 High-Definition Architectural Background Image -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img src="assets/images/hd/completed_luxury_salon.jpg" 
+           alt="Haute Architectural Living Salon by ATELIER" 
+           class="w-full h-full object-cover object-center scale-100 transition-transform duration-1000 ease-out">
+      <!-- Luxury Architectural Vignette Gradient -->
+      <div class="hero-overlay absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(17,18,15,0.15) 0%, rgba(17,18,15,0.65) 100%), linear-gradient(180deg, rgba(17,18,15,0.72) 0%, rgba(17,18,15,0.22) 48%, rgba(17,18,15,0.85) 100%), linear-gradient(90deg, rgba(17,18,15,0.82) 0%, rgba(17,18,15,0.3) 60%, transparent 100%);"></div>
+    </div>
+
+    <!-- Hero Narrative Content (Playfair Display + DM Sans Typography) -->
+    <div class="hero-content relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-28 flex flex-col justify-center min-h-[calc(100vh-80px)] sm:min-h-screen">
+      <div class="max-w-[92%] sm:max-w-[680px]">
+        <!-- Architectural Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full border border-gold/40 bg-gold/10 text-gold text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.28em] font-medium mb-3 sm:mb-6 backdrop-blur-md">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+          <span>Architecture &bull; Interior &bull; Lifestyle</span>
+        </div>
+
+        <h1 class="font-serif font-normal text-white tracking-tight leading-[1.06] text-3xl sm:text-5xl md:text-6xl lg:text-7xl" style="font-family: 'Playfair Display', serif;">
+          Spaces<br>
+          That <em class="text-gold italic font-normal" style="color: #d5c3a5;">Speak.</em>
+        </h1>
+
+        <p class="hero-description text-xs sm:text-sm leading-relaxed sm:leading-[1.85] text-[#e1ded7] mt-2.5 sm:mt-6 max-w-sm sm:max-w-md font-light tracking-wide line-clamp-3 sm:line-clamp-none">
+          We create timeless interiors where architecture, craftsmanship and contemporary living come together in harmonious silence.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-actions pt-4 sm:pt-8 flex flex-row items-center gap-2.5 sm:gap-4 pointer-events-auto">
+          <a href="portfolio.html" class="btn flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-[10.5px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold transition-all duration-300 shadow-xl rounded-full inline-flex items-center justify-center gap-2 border border-gold whitespace-nowrap">
+            <span>Explore Archive</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-charcoal-950 rtl-flip"></i>
+          </a>
+          <a href="contact.html" class="btn flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3.5 bg-charcoal-950/70 hover:bg-charcoal text-ivory text-[10.5px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold transition-all duration-300 rounded-full inline-flex items-center justify-center gap-2 border border-gold/40 backdrop-blur-md whitespace-nowrap">
+            <span>Book Free Consultation</span>
+          </a>
+        </div>
+
+        <!-- Curated Metric Strip -->
+        <div class="hero-metrics grid grid-cols-3 gap-2 sm:gap-6 pt-3.5 sm:pt-8 mt-4 sm:mt-8 border-t border-ivory/15 max-w-lg">
+          <div>
+            <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">120+</span>
+            <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Estates Handed Over</span>
+          </div>
+          <div>
+            <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">15+</span>
+            <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Global Awards</span>
+          </div>
+          <div>
+            <span class="metric-num font-serif text-2xl sm:text-4xl text-gold font-light block leading-none">100%</span>
+            <span class="metric-label text-[8px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.22em] text-neutral-400 mt-1 block leading-tight">Turnkey Precision</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Bottom Telemetry -->
+    <div class="hero-bottom absolute bottom-5 sm:bottom-8 left-4 right-4 sm:left-[6%] sm:right-[6%] flex items-center justify-between z-20 pointer-events-none">
+      <div class="scroll-indicator flex items-center gap-2.5 sm:gap-4 text-[9px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.28em] uppercase text-gold font-medium">
+        <span class="scroll-line w-8 sm:w-12 h-[1px] bg-gold"></span>
+        <span>Scroll to Explore</span>
+      </div>
+
+      <div class="text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-[#eee4d3] uppercase font-mono">
+        ATELIER &bull; Haute Living
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO OVERVIEW & BRAND STORY -->
+  <section class="py-28 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      
+      <!-- Left Column Images -->
+      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-5">
+        <div class="sm:col-span-8 image-zoom-wrapper rounded-sm overflow-hidden shadow-2xl border border-atelier aspect-[4/3] sm:aspect-auto sm:h-[460px]">
+          <img src="assets/images/living-slatted-marble.jpg" 
+               alt="Architectural salon with limestone fireplace" 
+               class="w-full h-full object-cover object-center">
+        </div>
+        <div class="sm:col-span-4 flex flex-row sm:flex-col gap-4 sm:gap-5 sm:pt-8">
+          <div class="w-1/2 sm:w-full image-zoom-wrapper rounded-sm overflow-hidden shadow-xl border border-atelier aspect-[4/3] sm:aspect-auto sm:h-48">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=85" 
+                 alt="Tactile stone and timber details" 
+                 class="w-full h-full object-cover object-center">
+          </div>
+          <div class="w-1/2 sm:w-full p-4 sm:p-5 bg-ivory-light dark:bg-charcoal-card border-l-2 border-gold rounded-sm shadow-md flex flex-col justify-center">
+            <span class="font-serif italic text-xs sm:text-sm block text-charcoal-800 dark:text-neutral-200 leading-snug">"Space is only luxury when it allows you to breathe."</span>
+            <span class="text-[8.5px] sm:text-[9px] tracking-[0.18em] sm:tracking-[0.25em] uppercase text-olive font-semibold mt-2.5 sm:mt-3 block">&mdash; Elena Vance, Principal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column Text -->
+      <div class="lg:col-span-6 space-y-7">
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">
+          <span>01 / Studio Manifesto</span>
+        </div>
+
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] font-normal text-charcoal-900 dark:text-ivory">
+          Curators of Spatial Harmony & Architectural Silence.
+        </h2>
+
+        <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed text-base sm:text-lg font-light editorial-dropcap">
+          At ATELIER, we discard transient interior fads in pursuit of timeless architectural composition. Every residence, penthouse, and corporate boardroom is approached as a three-dimensional sculpture—where light, raw travertine, smoked oak, and natural linen coalesce.
+        </p>
+
+        <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed font-light">
+          Founded in 2014 by architect Elena Vance, our multidisciplinary practice brings together licensed architects, bespoke furniture joiners, and lighting theorists across London and Zurich. We guide our clients through a frictionless journey from conceptual moodboarding to the ultimate turnkey handover.
+        </p>
+
+        <div class="pt-2 flex flex-wrap gap-5 items-center">
+          <a href="about.html" class="inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.22em] font-semibold text-olive dark:text-gold hover:underline transition group">
+            <span>Read Our Brand Story</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1 rtl-flip text-gold"></i>
+          </a>
+          <span class="text-neutral-300 dark:text-neutral-700">|</span>
+          <a href="process.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-semibold text-neutral-600 dark:text-neutral-400 hover:text-olive transition">
+            <span>Our 5-Stage Workflow</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CORE DISCIPLINES & SERVICES -->
+  <section class="py-28 bg-ivory-dark/40 dark:bg-charcoal-surface/60 border-y border-atelier">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold block mb-2">02 / Disciplines</span>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-charcoal-900 dark:text-ivory">
+            Architectural Offerings
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 max-w-md font-light leading-relaxed">
+          Bespoke solutions delivered with meticulous attention to detail, noble European provenance, and personalized ergonomics.
+        </p>
+      </div>
+
+      <!-- Services Grid (3 Primary Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Service 1: Residential -->
+        <div class="bg-ivory dark:bg-charcoal-card p-6 sm:p-10 rounded-sm border border-atelier hover:border-gold/50 transition-all duration-500 group flex flex-col justify-between shadow-sm hover:shadow-2xl">
+          <div>
+            <div class="image-zoom-wrapper h-44 sm:h-60 aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-6 border border-atelier">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" 
+                   alt="Residential Interior Design" 
+                   class="w-full h-full object-cover object-center">
+            </div>
+            <span class="font-serif text-2xl text-gold block mb-1">01</span>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Private Living</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory mt-1 mb-3">Residential Architecture</h3>
+            <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-6">
+              Complete turnkey design for private villas, urban penthouses, and heritage apartments. Curated furnishings, lighting schemes, and spatial flow.
+            </p>
+          </div>
+          <a href="service-details.html?service=residential" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-olive dark:text-gold hover:underline transition">
+            <span>Explore Residential</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-flip"></i>
+          </a>
+        </div>
+
+        <!-- Service 2: Office -->
+        <div class="bg-ivory dark:bg-charcoal-card p-6 sm:p-10 rounded-sm border border-atelier hover:border-gold/50 transition-all duration-500 group flex flex-col justify-between shadow-sm hover:shadow-2xl">
+          <div>
+            <div class="image-zoom-wrapper h-44 sm:h-60 aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-6 border border-atelier">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=85" 
+                   alt="Executive Corporate Office" 
+                   class="w-full h-full object-cover object-center">
+            </div>
+            <span class="font-serif text-2xl text-gold block mb-1">02</span>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Executive & Corporate</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory mt-1 mb-3">Executive Office Design</h3>
+            <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-6">
+              High-performance collaborative studios, executive boardrooms, and boutique headquarters engineered for focus and brand gravitas.
+            </p>
+          </div>
+          <a href="service-details.html?service=office" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-olive dark:text-gold hover:underline transition">
+            <span>Explore Office</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-flip"></i>
+          </a>
+        </div>
+
+        <!-- Service 3: Modular Kitchen -->
+        <div class="bg-ivory dark:bg-charcoal-card p-6 sm:p-10 rounded-sm border border-atelier hover:border-gold/50 transition-all duration-500 group flex flex-col justify-between shadow-sm hover:shadow-2xl">
+          <div>
+            <div class="image-zoom-wrapper h-44 sm:h-60 aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-6 border border-atelier">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" 
+                   alt="Bespoke Modular Kitchen" 
+                   class="w-full h-full object-cover object-center">
+            </div>
+            <span class="font-serif text-2xl text-gold block mb-1">03</span>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Culinary Architecture</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory mt-1 mb-3">Modular Kitchens</h3>
+            <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-6">
+              Custom millwork, monolithic quartz & travertine islands, concealed ergonomic storage, and integrated appliances of the highest caliber.
+            </p>
+          </div>
+          <a href="service-details.html?service=kitchen" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-olive dark:text-gold hover:underline transition">
+            <span>Explore Kitchens</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl-flip"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Additional Services Banner -->
+      <div class="mt-12 p-6 sm:p-8 bg-ivory dark:bg-charcoal-card rounded-sm border border-atelier flex flex-wrap items-center justify-between gap-4 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-gold">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs sm:text-sm font-medium text-charcoal-900 dark:text-ivory">
+            Also providing: Historic Property Renovation &bull; Lighting Architecture &bull; Bespoke Furniture &bull; Art Curation
+          </span>
+        </div>
+        <a href="services.html" class="text-xs uppercase tracking-[0.2em] font-semibold text-olive dark:text-gold hover:underline inline-flex items-center gap-1.5">
+          <span>View All Disciplines</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 rtl-flip"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PORTFOLIO PROJECTS -->
+  <section class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gallery">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold block mb-2">03 / Selected Works</span>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-charcoal-900 dark:text-ivory">
+          Signature Architecture
+        </h2>
+      </div>
+      <a href="portfolio.html" class="inline-flex items-center gap-2 px-6 py-3 border border-atelier hover:bg-olive hover:text-ivory dark:hover:bg-gold dark:hover:text-charcoal-950 transition text-xs uppercase tracking-[0.2em] font-semibold rounded-sm">
+        <span>View Full Archive (16)</span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <!-- 2x2 Curated Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- Project 1 -->
+      <div class="group cursor-pointer lightbox-trigger"
+           data-image="assets/images/living-slatted-marble.jpg"
+           data-title="The Elysian Penthouse"
+           data-meta="Residential &bull; Mayfair, London &bull; 2025"
+           data-desc="A 4,800 sq ft penthouse conceived around seamless daylight transitions, bespoke walnut millwork, and fluted Calacatta marble fireplace.">
+        <div class="image-zoom-wrapper h-[260px] xs:h-[320px] sm:h-[400px] lg:h-[480px] aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-5 border border-atelier shadow-lg">
+          <img src="assets/images/living-slatted-marble.jpg" 
+               alt="The Elysian Penthouse in Mayfair" 
+               class="w-full h-full object-cover object-center">
+        </div>
+        <div class="flex justify-between items-baseline">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Residential &bull; Mayfair, London</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory group-hover:text-gold transition mt-1">The Elysian Penthouse</h3>
+          </div>
+          <span class="font-serif italic text-base text-neutral-400">2025</span>
+        </div>
+        <p class="text-xs text-neutral-500 mt-1 font-light">Turnkey Architecture, Custom Furniture & Spatial Lighting</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="group cursor-pointer lightbox-trigger"
+           data-image="assets/images/sunken-firepit-waterfall.jpg"
+           data-title="Villa Solarium"
+           data-meta="Residential &bull; Zurich, Switzerland &bull; 2024"
+           data-desc="Harmonizing raw poured concrete with oiled smoked oak and natural limestone flooring overlooking Lake Zurich.">
+        <div class="image-zoom-wrapper h-[260px] xs:h-[320px] sm:h-[400px] lg:h-[480px] aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-5 border border-atelier shadow-lg">
+          <img src="assets/images/sunken-firepit-waterfall.jpg" 
+               alt="Villa Solarium in Zurich" 
+               class="w-full h-full object-cover object-center">
+        </div>
+        <div class="flex justify-between items-baseline">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Residential &bull; Zurich, Switzerland</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory group-hover:text-gold transition mt-1">Villa Solarium</h3>
+          </div>
+          <span class="font-serif italic text-base text-neutral-400">2024</span>
+        </div>
+        <p class="text-xs text-neutral-500 mt-1 font-light">Monolithic Living, Integrated Acoustic Ceilings</p>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="group cursor-pointer lightbox-trigger"
+           data-image="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=85"
+           data-title="Vanguard Asset Partners HQ"
+           data-meta="Corporate Office &bull; Manhattan, NYC &bull; 2024"
+           data-desc="An executive financial sanctuary in Midtown Manhattan fusing quiet luxury hospitality with high-technology video acoustics.">
+        <div class="image-zoom-wrapper h-[260px] xs:h-[320px] sm:h-[400px] lg:h-[480px] aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-5 border border-atelier shadow-lg">
+          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=85" 
+               alt="Vanguard Asset Partners HQ Manhattan" 
+               class="w-full h-full object-cover object-center">
+        </div>
+        <div class="flex justify-between items-baseline">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Corporate &bull; Manhattan, NYC</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory group-hover:text-gold transition mt-1">Vanguard Asset Partners HQ</h3>
+          </div>
+          <span class="font-serif italic text-base text-neutral-400">2024</span>
+        </div>
+        <p class="text-xs text-neutral-500 mt-1 font-light">Bespoke Boardrooms, Private Bar & Executive Suites</p>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="group cursor-pointer lightbox-trigger"
+           data-image="assets/images/cantilever-island-kitchen.jpg"
+           data-title="The Monolith Kitchen Atelier"
+           data-meta="Modular Kitchen &bull; Milan, Italy &bull; 2025"
+           data-desc="Sculptural central island clad in honed travertine, handleless matte bronze cabinetry, and concealed refrigeration systems.">
+        <div class="image-zoom-wrapper h-[260px] xs:h-[320px] sm:h-[400px] lg:h-[480px] aspect-[16/10] sm:aspect-auto rounded-sm overflow-hidden mb-4 sm:mb-5 border border-atelier shadow-lg">
+          <img src="assets/images/cantilever-island-kitchen.jpg" 
+               alt="The Monolith Kitchen Atelier in Milan" 
+               class="w-full h-full object-cover object-center">
+        </div>
+        <div class="flex justify-between items-baseline">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold">Modular Kitchen &bull; Milan, Italy</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-900 dark:text-ivory group-hover:text-gold transition mt-1">The Monolith Kitchen Atelier</h3>
+          </div>
+          <span class="font-serif italic text-base text-neutral-400">2025</span>
+        </div>
+        <p class="text-xs text-neutral-500 mt-1 font-light">Artisan Joinery, Monolithic Stone & Custom Lighting</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STUDIO STATISTICS & METRICS -->
+  <section class="py-16 sm:py-24 bg-charcoal text-ivory border-y border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center md:divide-x divide-charcoal-800">
+        
+        <div class="p-3.5 sm:p-6">
+          <span class="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-gold block mb-1.5 sm:mb-2">120+</span>
+          <span class="text-[8.5px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.25em] text-neutral-400 font-medium leading-tight block">Bespoke Residences</span>
+        </div>
+
+        <div class="p-3.5 sm:p-6">
+          <span class="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-gold block mb-1.5 sm:mb-2">15+</span>
+          <span class="text-[8.5px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.25em] text-neutral-400 font-medium leading-tight block">International Awards</span>
+        </div>
+
+        <div class="p-3.5 sm:p-6">
+          <span class="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-gold block mb-1.5 sm:mb-2">12</span>
+          <span class="text-[8.5px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.25em] text-neutral-400 font-medium leading-tight block">Dedicated Artisans</span>
+        </div>
+
+        <div class="p-3.5 sm:p-6">
+          <span class="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-gold block mb-1.5 sm:mb-2">100%</span>
+          <span class="text-[8.5px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.25em] text-neutral-400 font-medium leading-tight block">Turnkey Delivery</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN PHILOSOPHY SECTION -->
+  <section class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-20">
+      <span class="text-xs uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold block mb-2">04 / Our Ethos</span>
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-charcoal-900 dark:text-ivory">
+        Form Follows Emotion
+      </h2>
+      <p class="text-neutral-500 text-xs sm:text-sm mt-4 font-light leading-relaxed">
+        We believe architecture should calm the spirit. Three non-negotiable tenets govern every pencil stroke and material sample.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="p-10 bg-ivory-light dark:bg-charcoal-surface rounded-sm border border-atelier text-center space-y-5 shadow-sm hover:border-gold/50 transition">
+        <div class="w-14 h-14 mx-auto rounded-full bg-gold/15 flex items-center justify-center text-gold">
+          <i data-lucide="compass" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-charcoal-900 dark:text-ivory">Spatial Purity</h3>
+        <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+          Eliminating visual noise so natural illumination, architectural lines, and breathing room become the true centerpiece of the dwelling.
+        </p>
+      </div>
+
+      <div class="p-10 bg-ivory-light dark:bg-charcoal-surface rounded-sm border border-atelier text-center space-y-5 shadow-sm hover:border-gold/50 transition">
+        <div class="w-14 h-14 mx-auto rounded-full bg-gold/15 flex items-center justify-center text-gold">
+          <i data-lucide="layers" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-charcoal-900 dark:text-ivory">Tactile Materiality</h3>
+        <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+          Honest materials—raw travertine stone, brushed bronze, Belgian linen, and French smoked oak that develop a noble patina across decades.
+        </p>
+      </div>
+
+      <div class="p-10 bg-ivory-light dark:bg-charcoal-surface rounded-sm border border-atelier text-center space-y-5 shadow-sm hover:border-gold/50 transition">
+        <div class="w-14 h-14 mx-auto rounded-full bg-gold/15 flex items-center justify-center text-gold">
+          <i data-lucide="feather" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-charcoal-900 dark:text-ivory">Timeless Restraint</h3>
+        <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+          Rejecting fleeting viral fashion in favor of proportions, ergonomics, and subtle details that feel just as compelling thirty years from now.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLIENT TESTIMONIALS -->
+  <section class="py-28 bg-ivory-dark/40 dark:bg-charcoal-card/40 border-t border-atelier">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-olive dark:text-gold font-semibold block mb-2">05 / Testimonials</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-normal text-charcoal-900 dark:text-ivory">
+          Discerning Owners
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-8 sm:p-10 bg-ivory dark:bg-charcoal-800 rounded-sm border border-atelier flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div class="flex text-gold gap-1 text-sm">
+              &starf;&starf;&starf;&starf;&starf;
+            </div>
+            <p class="font-serif italic text-neutral-700 dark:text-neutral-200 text-lg leading-relaxed">
+              "Elena and the ATELIER team completely reconfigured our duplex apartment in Kensington. Their mastery of hidden storage and natural light transformed our daily well-being."
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-atelier/60 flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-serif font-bold text-sm">L</div>
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-charcoal-900 dark:text-ivory">Lady Charlotte Vane</h4>
+              <p class="text-[11px] text-neutral-500">Kensington, London</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8 sm:p-10 bg-ivory dark:bg-charcoal-800 rounded-sm border border-atelier flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div class="flex text-gold gap-1 text-sm">
+              &starf;&starf;&starf;&starf;&starf;
+            </div>
+            <p class="font-serif italic text-neutral-700 dark:text-neutral-200 text-lg leading-relaxed">
+              "For our financial firm's flagship Manhattan headquarters, we needed warmth, gravitas, and quiet hospitality. ATELIER delivered a corporate sanctuary beyond expectations."
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-atelier/60 flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-serif font-bold text-sm">M</div>
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-charcoal-900 dark:text-ivory">Marcus Sterling</h4>
+              <p class="text-[11px] text-neutral-500">Managing Partner, Sterling Partners NYC</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8 sm:p-10 bg-ivory dark:bg-charcoal-800 rounded-sm border border-atelier flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div class="flex text-gold gap-1 text-sm">
+              &starf;&starf;&starf;&starf;&starf;
+            </div>
+            <p class="font-serif italic text-neutral-700 dark:text-neutral-200 text-lg leading-relaxed">
+              "Our modular kitchen was executed with millimeter precision. The monolithic stone island is both an architectural sculpture and the happiest gathering place for our family."
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-atelier/60 flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-serif font-bold text-sm">A</div>
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-charcoal-900 dark:text-ivory">Dr. Antoine Moreau</h4>
+              <p class="text-[11px] text-neutral-500">Geneva Residence</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION CALL TO ACTION BANNER -->
+  <section class="py-28 bg-charcoal text-ivory text-center px-4 relative overflow-hidden border-t border-charcoal-800">
+    <div class="max-w-4xl mx-auto space-y-6 relative z-10">
+      <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">Initiate a Collaboration</span>
+      <h2 class="font-serif text-4xl sm:text-6xl font-normal leading-tight">
+        Begin Your Spatial Journey with ATELIER.
+      </h2>
+      <p class="text-base sm:text-lg text-neutral-300 max-w-xl mx-auto font-light leading-relaxed">
+        We limit our commissions to twelve concurrent projects globally to guarantee the creative devotion your sanctuary deserves.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="px-9 py-4 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 transition-all duration-300 text-xs uppercase tracking-[0.22em] font-semibold rounded-sm border border-gold shadow-xl">
+          Book Free Consultation
+        </a>
+        <a href="portfolio.html" class="px-9 py-4 bg-transparent border border-neutral-700 text-ivory hover:border-gold hover:text-gold transition text-xs uppercase tracking-[0.22em] font-semibold rounded-sm">
+          Browse Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-charcoal text-neutral-400 text-sm pt-24 pb-12 border-t border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-charcoal-800">
+        
+        <!-- Brand Summary -->
+        <div class="lg:col-span-2 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-sm bg-olive flex items-center justify-center text-ivory font-monument font-bold text-lg border border-gold/30">A</div>
+            <span class="font-monument text-xl tracking-[0.25em] font-semibold text-ivory">ATELIER</span>
+          </div>
+          <p class="text-xs text-neutral-400 max-w-sm leading-relaxed font-light">
+            Spaces with Soul. Designed with Intention. An international architecture and interior design practice serving clients in London, New York, Zurich and Milan.
+          </p>
+          <div class="pt-2 flex gap-4 text-neutral-400">
+            <a href="#" class="hover:text-gold transition" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-gold transition" aria-label="Pinterest"><i data-lucide="pin" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-gold transition" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Links: Disciplines -->
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.22em] text-ivory font-semibold mb-4">Disciplines</h4>
+          <ul class="space-y-2.5 text-xs font-light">
+            <li><a href="service-details.html?service=residential" class="hover:text-gold transition">Residential Architecture</a></li>
+            <li><a href="service-details.html?service=office" class="hover:text-gold transition">Executive Office Studios</a></li>
+            <li><a href="service-details.html?service=kitchen" class="hover:text-gold transition">Modular Kitchens</a></li>
+            <li><a href="services.html" class="hover:text-gold transition">Spatial Lighting</a></li>
+            <li><a href="services.html" class="hover:text-gold transition">Turnkey Renovation</a></li>
+          </ul>
+        </div>
+
+        <!-- Links: Quick Pages -->
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.22em] text-ivory font-semibold mb-4">Studio Navigation</h4>
+          <ul class="space-y-2.5 text-xs font-light">
+            <li><a href="index.html" class="hover:text-gold transition">Home 01 (Classic)</a></li>
+            <li><a href="home-2.html" class="hover:text-gold transition">Home 02 (Premium)</a></li>
+            <li><a href="about.html" class="hover:text-gold transition">About the Practice</a></li>
+            <li><a href="portfolio.html" class="hover:text-gold transition">Portfolio Archive</a></li>
+            <li><a href="process.html" class="hover:text-gold transition">Design Methodology</a></li>
+            <li><a href="services.html#pricing" class="hover:text-gold transition">Design Packages</a></li>
+            <li></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.22em] text-ivory font-semibold mb-4">ATELIER Gazette</h4>
+          <p class="text-xs text-neutral-400 mb-3 leading-relaxed font-light">
+            Curated essays on spatial architecture, material sourcing, and studio updates.
+          </p>
+          <form class="newsletter-form flex flex-col gap-2">
+            <input type="email" placeholder="Your confidential email" required
+                   class="w-full bg-charcoal-800/90 border border-neutral-700 rounded-sm px-3.5 py-2.5 text-xs text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+            <button type="submit" class="w-full py-2.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs uppercase tracking-wider font-semibold rounded-sm transition duration-300 shadow-md border border-gold">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
+        <div>
+          &copy; 2026 ATELIER Interior Design Studio. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="login.html" class="hover:text-gold transition">Client Portal</a>
+          <a href="404.html" class="hover:text-gold transition">404 Error</a>
+          <a href="coming-soon.html" class="hover:text-gold transition">Maintenance</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 z-40 bg-charcoal dark:bg-gold text-ivory dark:text-charcoal-950 hover:bg-gold hover:text-charcoal-950 dark:hover:bg-ivory dark:hover:text-charcoal-900 border border-gold/40 cursor-pointer" aria-label="Back to Top">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/forms.js"></script>
+
+  <!-- SCROLL REVEAL & INTERSECTION OBSERVER -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    document.querySelectorAll(
+      "section, .gallery div"
+    ).forEach((element) => {
+      if (element.classList.contains("hero")) {
+        element.classList.add("active");
+      } else {
+        element.classList.add("reveal");
+        observer.observe(element);
+      }
+    });
+  });
+  </script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  });
+  </script>
+</body>
+</html>

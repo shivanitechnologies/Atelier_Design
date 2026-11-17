@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Private Consultation — ATELIER Interior Design Studio</title>
+  <meta name="description" content="Inquire about commissioning ATELIER for bespoke residential, office, or modular kitchen architecture. London and New York studios.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            secondary: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              light: '#e9e4db'
+            },
+            olive: {
+              DEFAULT: '#d5c3a5',
+              50: '#faf8f5',
+              100: '#f4ede1',
+              200: '#e8ded0',
+              300: '#ded0bc',
+              400: '#d5c3a5',
+              500: '#d5c3a5',
+              600: '#b8a584',
+              700: '#9b8765',
+              800: '#756346',
+              900: '#473a25'
+            },
+            gold: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            ivory: {
+              DEFAULT: '#e9e4db',
+              light: '#f5f2ec',
+              dark: '#ded7cb',
+              muted: '#d2cbbe'
+            },
+            charcoal: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              700: '#27271f',
+              800: '#1b1c17',
+              900: '#11120f',
+              950: '#0a0a08'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            monument: ['"Cinzel"', '"Cormorant Garamond"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-ivory dark:bg-charcoal text-charcoal-900 dark:text-ivory font-sans transition-colors duration-400 bg-grain selection:bg-olive selection:text-ivory">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 transition-all duration-300 bg-ivory/90 dark:bg-charcoal/90 border-b border-atelier backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <a href="index.html" class="flex items-center gap-3.5 group flex-shrink-0">
+        <div class="w-10 h-10 rounded-sm bg-charcoal dark:bg-olive flex items-center justify-center text-ivory font-monument font-semibold text-xl shadow-md transition-all duration-500 group-hover:bg-olive dark:group-hover:bg-gold border border-gold/30">
+          A
+        </div>
+        <div>
+          <span class="font-monument text-xl tracking-[0.28em] font-semibold text-charcoal-900 dark:text-ivory block leading-none">ATELIER</span>
+          <span class="text-[8.5px] tracking-[0.3em] text-olive dark:text-gold font-medium uppercase block mt-1">Architecture &bull; Interiors</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-[10.5px] xl:text-[11px] uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium text-neutral-600 dark:text-neutral-300 whitespace-nowrap flex-nowrap">
+        <!-- Home Editions Dropdown (like requested image) -->
+        <div class="relative group/home py-2 home-dropdown-wrapper" id="home-dropdown-wrapper">
+          <button type="button" class="flex items-center gap-1.5 py-1.5 uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium transition whitespace-nowrap cursor-pointer hover:text-olive dark:hover:text-gold" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <i data-lucide="chevron-down" id="home-dropdown-chevron" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/home:rotate-180 text-neutral-400 group-hover/home:text-gold"></i>
+          </button>
+          
+          <!-- Dropdown Card -->
+          <div class="home-dropdown-menu absolute top-full left-0 pt-2 w-64 opacity-0 translate-y-2 pointer-events-none group-hover/home:opacity-100 group-hover/home:translate-y-0 group-hover/home:pointer-events-auto transition-all duration-200 z-50">
+            <div class="bg-ivory dark:bg-charcoal-card border border-atelier rounded-lg shadow-2xl p-2 space-y-1 backdrop-blur-xl">
+              
+              <!-- Home 1 (Classic) -->
+              <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium transition text-charcoal-800 dark:text-ivory hover:text-charcoal-950 dark:hover:text-gold hover:bg-charcoal/5 dark:hover:bg-gold/10 group/item">
+                <div class="w-7 h-7 rounded flex items-center justify-center bg-charcoal/10 dark:bg-charcoal-surface text-charcoal-900 dark:text-gold group-hover/item:bg-charcoal group-hover/item:text-ivory dark:group-hover/item:bg-gold dark:group-hover/item:text-charcoal-950 transition shrink-0 border border-charcoal/10 dark:border-gold/20">
+                  <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="text-left">
+                  <span class="block text-[11px] uppercase tracking-wider font-semibold text-charcoal-900 dark:text-ivory group-hover/item:text-charcoal-950 dark:group-hover/item:text-gold">Home 1 (Classic)</span>
+                  <span class="block text-[9px] text-neutral-600 dark:text-neutral-400 font-normal lowercase tracking-normal">editorial sanctuary</span>
+                </div>
+              </a>
+
+              <!-- Home 2 (Premium) -->
+              <a href="home-2.html" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-xs font-medium transition text-charcoal-800 dark:text-ivory hover:text-charcoal-950 dark:hover:text-gold hover:bg-charcoal/5 dark:hover:bg-gold/10 group/item">
+                <div class="w-7 h-7 rounded flex items-center justify-center bg-charcoal/10 dark:bg-charcoal-surface text-charcoal-900 dark:text-gold group-hover/item:bg-charcoal group-hover/item:text-ivory dark:group-hover/item:bg-gold dark:group-hover/item:text-charcoal-950 transition shrink-0 border border-charcoal/10 dark:border-gold/20">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="text-left">
+                  <span class="block text-[11px] uppercase tracking-wider font-semibold text-charcoal-900 dark:text-ivory group-hover/item:text-charcoal-950 dark:group-hover/item:text-gold">Home 2 (Premium)</span>
+                  <span class="block text-[9px] text-neutral-600 dark:text-neutral-400 font-normal lowercase tracking-normal">curated split-screen</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">About</a>
+        <a href="services.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Services</a>
+        <a href="portfolio.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Portfolio</a>
+        <a href="process.html" class="hover:text-olive dark:hover:text-gold transition py-1.5 whitespace-nowrap">Process</a>
+        <a href="contact.html" class="text-olive dark:text-gold font-semibold py-1.5 border-b-2 border-olive dark:border-gold whitespace-nowrap">Contact</a>
+      </nav>
+
+                  <div class="flex items-center gap-2.5 flex-shrink-0">
+        <!-- 1. Theme Toggle: Gold-Bordered Circle with Sun / Moon (as in 1st image) -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Theme" title="Toggle Light / Dark Sanctuary">
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3.5"/>
+            <line x1="12" y1="2" x2="12" y2="4.5"/>
+            <line x1="12" y1="19.5" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="4.5" y2="12"/>
+            <line x1="19.5" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+            <line x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+            <line x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+            <line x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+          </svg>
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-moon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <!-- 2. RTL Toggle: Gold-Bordered Circle with Opposing Horizontal Arrows (as in 1st image) -->
+        <button class="rtl-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction">
+          <svg class="w-4 h-4 text-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 7-4 3.5 4 3.5"/>
+            <path d="M4 10.5h16"/>
+            <path d="m16 13.5 4 3.5-4 3.5"/>
+            <path d="M20 17H4"/>
+          </svg>
+          <span class="sr-only rtl-text">RTL</span>
+        </button>
+
+        <!-- 3. CTA Button: Book Free Consultation -->
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center h-9 px-5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs font-semibold uppercase tracking-[0.14em] rounded-full shadow-md transition-all duration-300 whitespace-nowrap flex-shrink-0 border border-gold">
+          <span>Book Free Consultation</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobile-menu-toggle" class="lg:hidden p-2 text-charcoal-900 dark:text-ivory hover:text-gold transition flex-shrink-0" aria-label="Open Navigation Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-charcoal-950/80 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobile-menu" class="fixed inset-0 w-full h-full bg-ivory dark:bg-charcoal-900 z-50 p-6 sm:p-8 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 pointer-events-none border-l border-atelier overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-5 border-b border-atelier">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-sm bg-charcoal dark:bg-olive flex items-center justify-center text-ivory font-monument font-bold text-lg shadow-sm border border-gold/30">A</div>
+          <div>
+            <span class="font-monument tracking-[0.24em] font-semibold text-base text-charcoal-900 dark:text-ivory block leading-none">ATELIER</span>
+            <span class="text-[8px] tracking-[0.25em] text-olive dark:text-gold font-medium uppercase block mt-1">Architecture &bull; Interiors</span>
+          </div>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- 1. Mobile Theme Toggle: Gold-Bordered Circle with Sun / Moon -->
+          <button class="theme-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Theme" title="Toggle Light / Dark Sanctuary">
+            <svg class="w-4 h-4 text-gold flex-shrink-0 icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3.5"/>
+              <line x1="12" y1="2" x2="12" y2="4.5"/>
+              <line x1="12" y1="19.5" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="4.5" y2="12"/>
+              <line x1="19.5" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+              <line x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+              <line x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+              <line x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+            </svg>
+            <svg class="w-4 h-4 text-gold flex-shrink-0 icon-moon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+          </button>
+
+          <!-- 2. Mobile RTL Toggle: Gold-Bordered Circle with Opposing Horizontal Arrows -->
+          <button class="rtl-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction">
+            <svg class="w-4 h-4 text-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m8 7-4 3.5 4 3.5"/>
+              <path d="M4 10.5h16"/>
+              <path d="m16 13.5 4 3.5-4 3.5"/>
+              <path d="M20 17H4"/>
+            </svg>
+            <span class="sr-only rtl-text">RTL</span>
+          </button>
+
+          <!-- Mobile Menu Close Button -->
+          <button id="mobile-menu-close" class="w-9 h-9 rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-gold p-0 text-neutral-600 dark:text-neutral-400 hover:text-gold transition flex items-center justify-center" aria-label="Close menu">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav class="flex flex-col gap-1 mt-6 text-xs uppercase tracking-[0.2em] font-medium">
+        <a href="index.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Home 01 (Classic)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="home-2.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Home 02 (Premium)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="about.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>About Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="services.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Services</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="service-details.html" class="py-2 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold pl-5 text-[11px] text-neutral-500 flex items-center justify-between ">
+          <span>&rarr; Service Details</span>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="portfolio.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Portfolio Archive</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="process.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Design Process</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="pricing.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Pricing & Tiers</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="blog.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
+          <span>Journal / Blog</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+        <a href="contact.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between text-olive dark:text-gold font-semibold">
+          <span>Contact Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-atelier space-y-4 my-4">
+      <div class="flex items-center justify-between text-xs">
+        <span class="uppercase tracking-widest text-neutral-500">Private Portal</span>
+        <div class="flex gap-3 font-semibold">
+          <a href="login.html" class="hover:text-olive dark:hover:text-gold">Sign In</a>
+          <span class="text-neutral-400">/</span>
+          <a href="register.html" class="text-gold">Register</a>
+        </div>
+      </div>
+      <a href="contact.html" class="w-full py-3.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center rounded-full shadow-md border border-gold transition-all duration-300">Book Free Consultation</a>
+    </div>
+  </aside>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero-banner py-16 lg:py-20 border-b border-atelier">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-charcoal/20 dark:border-gold/40 bg-charcoal/5 dark:bg-gold/10 text-charcoal-900 dark:text-gold text-[10px] uppercase tracking-[0.28em] font-semibold mb-6 shadow-sm">
+        <i data-lucide="compass" class="w-3.5 h-3.5 text-olive-800 dark:text-gold"></i>
+        <span>Initiate An Architectural Commission</span>
+      </div>
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-light text-charcoal-900 dark:text-ivory leading-[1.05] tracking-tight">
+        Start a <span class="italic font-normal text-olive dark:text-gold">Conversation</span>
+      </h1>
+      <p class="text-neutral-600 dark:text-neutral-300 text-base sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed font-light">
+        We welcome confidential discussions regarding residential estates, penthouses, executive offices, and custom modular kitchens worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT & CONSULTATION FORM SECTION -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Left Column: Studio Information & Locations -->
+      <div class="lg:col-span-5 space-y-8">
+        
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.28em] text-olive dark:text-gold font-semibold block mb-2">Our Physical Presence</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-900 dark:text-ivory font-light mb-6">Studio Ateliers</h2>
+          <div class="space-y-5">
+            
+            <!-- London Studio -->
+            <div class="p-6 bg-ivory-light dark:bg-charcoal-surface rounded-sm border border-atelier hover:border-gold/50 transition duration-300 space-y-3 shadow-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-[9px] uppercase tracking-[0.24em] text-gold font-semibold">Global Headquarters</span>
+                <span class="text-[9px] text-neutral-400 uppercase tracking-widest">GMT Zone</span>
+              </div>
+              <h3 class="font-monument text-lg text-charcoal-900 dark:text-ivory tracking-wide">Mayfair Practice</h3>
+              <p class="text-xs text-neutral-500 font-light">14 Berkeley Square, Mayfair, London W1J 6BD, UK</p>
+              <div class="pt-2 text-xs text-neutral-600 dark:text-neutral-300 space-y-1 font-light border-t border-atelier pt-3">
+                <p>Phone: <a href="tel:+442079460192" class="hover:text-gold font-medium transition">+44 (0) 20 7946 0192</a></p>
+                <p>Email: <a href="mailto:london@atelier-studio.design" class="hover:text-gold font-medium transition">london@atelier-studio.design</a></p>
+              </div>
+            </div>
+
+            <!-- New York Studio -->
+            <div class="p-6 bg-ivory-light dark:bg-charcoal-surface rounded-sm border border-atelier hover:border-gold/50 transition duration-300 space-y-3 shadow-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-[9px] uppercase tracking-[0.24em] text-gold font-semibold">Americas Atelier</span>
+                <span class="text-[9px] text-neutral-400 uppercase tracking-widest">EST Zone</span>
+              </div>
+              <h3 class="font-monument text-lg text-charcoal-900 dark:text-ivory tracking-wide">Tribeca Practice</h3>
+              <p class="text-xs text-neutral-500 font-light">68 Franklin Street, Tribeca, New York, NY 10013, USA</p>
+              <div class="pt-2 text-xs text-neutral-600 dark:text-neutral-300 space-y-1 font-light border-t border-atelier pt-3">
+                <p>Phone: <a href="tel:+12125550198" class="hover:text-gold font-medium transition">+1 (212) 555-0198</a></p>
+                <p>Email: <a href="mailto:nyc@atelier-studio.design" class="hover:text-gold font-medium transition">nyc@atelier-studio.design</a></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Consultation Protocols -->
+        <div class="p-6 bg-ivory-light dark:bg-charcoal-surface rounded-sm border-l-2 border-gold space-y-2.5 shadow-sm">
+          <h4 class="font-serif text-lg text-charcoal-900 dark:text-ivory font-normal">Consultation Protocols</h4>
+          <p class="text-xs text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
+            Monday &ndash; Friday: 09:00 &ndash; 18:30 (GMT / EST)<br>
+            Saturday: Private client consultations by appointment only.<br>
+            Sunday: Studios closed for rest & architectural research.
+          </p>
+          <span class="text-[10px] text-gold font-semibold uppercase tracking-widest block pt-1">
+            Typical Advisory Response: Within 24 Business Hours
+          </span>
+        </div>
+
+        <!-- Architectural Blueprint Vector Map -->
+        <div class="relative h-60 rounded-sm overflow-hidden border border-atelier bg-charcoal-950 flex items-center justify-center p-6 text-center shadow-lg">
+          <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:16px_16px]"></div>
+          <div class="relative z-10 space-y-2 text-ivory">
+            <div class="w-10 h-10 mx-auto rounded-full bg-olive/30 border border-gold/40 flex items-center justify-center text-gold shadow-lg">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-monument text-sm tracking-widest text-ivory">Mayfair &bull; Tribeca &bull; Milan</h4>
+            <p class="text-[10px] text-neutral-400 font-mono">51.5098° N, 0.1484° W &bull; Berkeley Square Gallery</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="inline-block text-[10px] uppercase tracking-[0.2em] text-gold hover:underline pt-1">
+              Open in Google Maps &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: 8-Field Consultation Form -->
+      <div class="lg:col-span-7 bg-ivory-light dark:bg-charcoal-surface p-5 sm:p-8 lg:p-12 rounded-sm border border-atelier shadow-2xl">
+        <span class="text-[10px] uppercase tracking-[0.28em] text-olive dark:text-gold font-semibold block mb-2">Preliminary Consultation</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-900 dark:text-ivory font-light mb-2">Request Spatial Evaluation</h2>
+        <p class="text-xs text-neutral-500 font-light mb-8">Please provide preliminary details regarding your spatial requirements and site dimensions.</p>
+
+        <form id="consultation-form" class="space-y-6" novalidate>
+          
+          <!-- Full Name -->
+          <div>
+            <label for="full-name" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+              Full Name *
+            </label>
+            <input type="text" id="full-name" name="fullName" required placeholder="Lord / Lady / Dr. / First Last"
+                   class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+          </div>
+
+          <!-- Email & Phone (Grid) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="email-address" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+                Email Address *
+              </label>
+              <input type="email" id="email-address" name="email" required placeholder="client@estate.com"
+                     class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+            </div>
+
+            <div>
+              <label for="phone-number" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+                Telephone Number *
+              </label>
+              <input type="tel" id="phone-number" name="phone" required placeholder="+44 7911 123456"
+                     class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+            </div>
+          </div>
+
+          <!-- Service Required & Property Type (Grid) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="service-required" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+                Discipline Required *
+              </label>
+              <select id="service-required" name="service" required
+                      class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory focus:outline-none focus:border-gold transition">
+                <option value="">Select Primary Discipline</option>
+                <option value="residential">Residential Architecture & Interior</option>
+                <option value="office">Executive Office Environment</option>
+                <option value="kitchen">Artisanal Modular Kitchen</option>
+                <option value="renovation">Historical Property Renovation</option>
+                <option value="curation">Full Spatial Turnkey Curation</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="property-type" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+                Property Typology
+              </label>
+              <select id="property-type" name="propertyType"
+                      class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory focus:outline-none focus:border-gold transition">
+                <option value="penthouse">Urban Penthouse / Loft</option>
+                <option value="villa">Country Villa / Country Estate</option>
+                <option value="townhouse">Historic Townhouse / Brownstone</option>
+                <option value="corporate">Corporate Headquarters / Office</option>
+                <option value="commercial">Boutique Commercial Salon</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Location & Approximate Budget (Grid) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="project-location" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+                Project Location (City / Region)
+              </label>
+              <input type="text" id="project-location" name="location" placeholder="e.g. Mayfair, London / Geneva / Aspen"
+                     class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+            </div>
+
+            <div>
+              <label for="approx-budget" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+                Approximate Budget Allocation
+              </label>
+              <select id="approx-budget" name="budget"
+                      class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory focus:outline-none focus:border-gold transition">
+                <option value="25-50k">£25,000 – £50,000 (Consultation & Concept)</option>
+                <option value="50-100k">£50,000 – £100,000 (Design & Technical Plans)</option>
+                <option value="100-250k">£100,000 – £250,000 (Complete Turnkey Residence)</option>
+                <option value="250k+">£250,000+ (Signature Bespoke Estate)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Project Description -->
+          <div>
+            <label for="project-description" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-2">
+              Project Description & Spatial Vision *
+            </label>
+            <textarea id="project-description" name="description" rows="5" required
+                      placeholder="Please describe your property square footage, desired timeline, material aspirations, and any key architectural modifications..."
+                      class="w-full px-4 py-3.5 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition"></textarea>
+          </div>
+
+          <!-- Submission Button -->
+          <div class="pt-3">
+            <button type="submit" class="w-full py-4 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-[11px] uppercase tracking-[0.24em] font-semibold rounded-sm transition-all duration-300 shadow-xl flex items-center justify-center gap-2 border border-gold">
+              <span>Book Free Consultation</span>
+              <i data-lucide="send" class="w-3.5 h-3.5 text-charcoal-950"></i>
+            </button>
+            <p class="text-[10px] text-neutral-400 text-center mt-3 font-light">
+              We respect your privacy. All floor plans and correspondence are governed by our studio non-disclosure protocol.
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONFIRMATION MODAL -->
+  <div id="consultation-success-modal" class="fixed inset-0 bg-charcoal-950/80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="bg-ivory dark:bg-charcoal-surface max-w-md w-full p-8 sm:p-10 rounded-sm border border-gold/40 shadow-2xl text-center space-y-6 animate-fade-in">
+      <div class="w-16 h-16 mx-auto rounded-full bg-gold/15 text-gold flex items-center justify-center border border-gold/40">
+        <i data-lucide="check" class="w-8 h-8"></i>
+      </div>
+      <div>
+        <span class="text-[9px] uppercase tracking-[0.25em] text-gold font-semibold block mb-1">Transmission Confirmed</span>
+        <h3 class="font-serif text-3xl text-charcoal-900 dark:text-ivory font-light">Consultation Request Received</h3>
+      </div>
+      <p class="text-xs text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
+        Thank you for entrusting ATELIER with your spatial vision. Our Principal Architect will review your brief and contact you within 24 hours to coordinate your preliminary consultation.
+      </p>
+      <button id="close-success-modal" class="w-full py-3.5 bg-olive hover:bg-gold hover:text-charcoal text-ivory text-[10px] uppercase tracking-[0.22em] font-semibold rounded-sm transition">
+        Return to Studio
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-charcoal-950 text-neutral-400 text-sm pt-20 pb-12 border-t border-charcoal-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-charcoal-border">
+        <div class="lg:col-span-2 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-sm bg-olive flex items-center justify-center text-ivory font-monument font-bold text-lg border border-gold/30">A</div>
+            <span class="font-monument text-xl tracking-[0.25em] font-semibold text-ivory">ATELIER</span>
+          </div>
+          <p class="text-xs text-neutral-400 max-w-sm leading-relaxed font-light">
+            Spaces with Soul. Designed with Intention. An international architecture and interior design practice serving discerning clients globally.
+          </p>
+          <div class="flex items-center gap-3 pt-2 text-xs text-gold">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span class="text-neutral-400">Mayfair, London &bull; Tribeca, New York</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-monument text-xs uppercase tracking-[0.2em] text-ivory font-semibold mb-4">Disciplines</h4>
+          <ul class="space-y-2.5 text-xs font-light">
+            <li><a href="service-details.html?service=residential" class="hover:text-gold transition">Residential Architecture</a></li>
+            <li><a href="service-details.html?service=office" class="hover:text-gold transition">Executive Office Studios</a></li>
+            <li><a href="service-details.html?service=kitchen" class="hover:text-gold transition">Modular Kitchens</a></li>
+            <li><a href="services.html" class="hover:text-gold transition">Spatial Lighting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-monument text-xs uppercase tracking-[0.2em] text-ivory font-semibold mb-4">Navigation</h4>
+          <ul class="space-y-2.5 text-xs font-light">
+            <li><a href="index.html" class="hover:text-gold transition">Home 01 (Classic)</a></li>
+            <li><a href="home-2.html" class="hover:text-gold transition">Home 02 (Premium)</a></li>
+            <li><a href="about.html" class="hover:text-gold transition">About the Practice</a></li>
+            <li><a href="portfolio.html" class="hover:text-gold transition">Portfolio Archive</a></li>
+            <li><a href="services.html#pricing" class="hover:text-gold transition">Design Packages</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-monument text-xs uppercase tracking-[0.2em] text-ivory font-semibold mb-4">Gazette</h4>
+          <form class="newsletter-form flex flex-col gap-2">
+            <input type="email" placeholder="Your email address" required class="w-full bg-charcoal-card border border-charcoal-border rounded-sm px-3.5 py-2.5 text-xs text-ivory placeholder-neutral-500 focus:outline-none focus:border-gold">
+            <button type="submit" class="w-full py-2.5 bg-olive hover:bg-gold hover:text-charcoal text-ivory text-[10px] uppercase tracking-[0.2em] font-semibold rounded-sm transition">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
+        <div>&copy; 2026 ATELIER Interior Design Studio. All rights reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="login.html" class="hover:text-gold transition">Client Portal</a>
+          <a href="404.html" class="hover:text-gold transition">404 Error</a>
+          <a href="coming-soon.html" class="hover:text-gold transition">Maintenance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 z-40 bg-charcoal dark:bg-gold text-ivory dark:text-charcoal-950 hover:bg-gold hover:text-charcoal-950 dark:hover:bg-ivory dark:hover:text-charcoal-900 border border-gold/40 cursor-pointer" aria-label="Back to Top">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  </button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

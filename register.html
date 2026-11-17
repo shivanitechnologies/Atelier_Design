@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Private Account — ATELIER Interior Design Studio</title>
+  <meta name="description" content="Register for client access to ATELIER. Monitor architectural milestone handovers, material samples, and direct communications.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            secondary: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              light: '#e9e4db'
+            },
+            olive: {
+              DEFAULT: '#d5c3a5',
+              50: '#faf8f5',
+              100: '#f4ede1',
+              200: '#e8ded0',
+              300: '#ded0bc',
+              400: '#d5c3a5',
+              500: '#d5c3a5',
+              600: '#b8a584',
+              700: '#9b8765',
+              800: '#756346',
+              900: '#473a25'
+            },
+            gold: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            ivory: {
+              DEFAULT: '#e9e4db',
+              light: '#f5f2ec',
+              dark: '#ded7cb',
+              muted: '#d2cbbe'
+            },
+            charcoal: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              700: '#27271f',
+              800: '#1b1c17',
+              900: '#11120f',
+              950: '#0a0a08'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            monument: ['"Cinzel"', '"Cormorant Garamond"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-ivory dark:bg-charcoal text-charcoal-900 dark:text-ivory font-sans min-h-screen flex flex-col justify-between transition-colors duration-400 bg-grain selection:bg-olive selection:text-ivory">
+
+  <!-- Top Utilities Bar -->
+  <div class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+    <a href="index.html" class="flex items-center gap-2.5 group text-[10px] uppercase tracking-[0.24em] text-neutral-500 hover:text-gold transition">
+      <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-flip"></i>
+      <span>Return to Studio</span>
+    </a>
+                <div class="flex items-center gap-2.5 flex-shrink-0">
+        <!-- 1. Theme Toggle: Gold-Bordered Circle with Sun / Moon (as in 1st image) -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Theme" title="Toggle Light / Dark Sanctuary">
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3.5"/>
+            <line x1="12" y1="2" x2="12" y2="4.5"/>
+            <line x1="12" y1="19.5" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="4.5" y2="12"/>
+            <line x1="19.5" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+            <line x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+            <line x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+            <line x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+          </svg>
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-moon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <!-- 2. RTL Toggle: Gold-Bordered Circle with Opposing Horizontal Arrows (as in 1st image) -->
+        <button class="rtl-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction">
+          <svg class="w-4 h-4 text-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 7-4 3.5 4 3.5"/>
+            <path d="M4 10.5h16"/>
+            <path d="m16 13.5 4 3.5-4 3.5"/>
+            <path d="M20 17H4"/>
+          </svg>
+          <span class="sr-only rtl-text">RTL</span>
+        </button>
+      </div>
+  </div>
+
+  <!-- Centered Register Card -->
+  <main class="flex-grow flex items-center justify-center px-4 py-8">
+    <div class="max-w-md w-full bg-ivory-light dark:bg-charcoal-surface p-8 sm:p-12 rounded-sm border border-atelier shadow-2xl space-y-7 animate-fade-in">
+      
+      <!-- Logo inside card -->
+      <div class="text-center space-y-3">
+        <a href="index.html" class="inline-flex items-center justify-center">
+          <div class="w-12 h-12 rounded-sm bg-charcoal dark:bg-olive flex items-center justify-center text-ivory font-monument font-bold text-2xl shadow-md border border-gold/40">
+            A
+          </div>
+        </a>
+        <div>
+          <span class="font-monument text-lg tracking-[0.25em] text-charcoal-900 dark:text-ivory block uppercase">ATELIER</span>
+          <h1 class="font-serif text-3xl text-charcoal-900 dark:text-ivory font-light mt-1">Create Private Account</h1>
+        </div>
+        <p class="text-xs text-neutral-500 font-light">Register for client-level access to project schedules, specifications, and invoices.</p>
+      </div>
+
+      <!-- Register Form -->
+      <form id="register-form" class="space-y-4" novalidate>
+        
+        <!-- Full Name -->
+        <div>
+          <label for="register-name" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-1.5">
+            Full Name *
+          </label>
+          <input type="text" id="register-name" required placeholder="Lord / Lady / Dr. / First Last"
+                 class="w-full px-4 py-3 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+        </div>
+
+        <!-- Email Address -->
+        <div>
+          <label for="register-email" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-1.5">
+            Email Address *
+          </label>
+          <input type="email" id="register-email" required placeholder="client@estate.com"
+                 class="w-full px-4 py-3 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+        </div>
+
+        <!-- Password Field with Toggle -->
+        <div>
+          <label for="register-password" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-1.5">
+            Password *
+          </label>
+          <div class="relative">
+            <input type="password" id="register-password" required placeholder="At least 8 characters"
+                   class="w-full px-4 py-3 pr-10 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+            <button type="button" class="toggle-password-btn absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-gold focus:outline-none" data-target="register-password" aria-label="Toggle password visibility">
+              <i data-lucide="eye" class="eye-open w-4 h-4"></i>
+              <i data-lucide="eye-off" class="eye-closed w-4 h-4 hidden"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password Field with Toggle -->
+        <div>
+          <label for="register-password-confirm" class="block text-[10px] uppercase tracking-[0.22em] font-semibold text-charcoal-800 dark:text-neutral-300 mb-1.5">
+            Confirm Password *
+          </label>
+          <div class="relative">
+            <input type="password" id="register-password-confirm" required placeholder="Re-enter password"
+                   class="w-full px-4 py-3 pr-10 bg-ivory dark:bg-charcoal-card border border-atelier rounded-sm text-xs text-charcoal-900 dark:text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+            <button type="button" class="toggle-password-btn absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-gold focus:outline-none" data-target="register-password-confirm" aria-label="Toggle password visibility">
+              <i data-lucide="eye" class="eye-open w-4 h-4"></i>
+              <i data-lucide="eye-off" class="eye-closed w-4 h-4 hidden"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Terms and Privacy Checkbox -->
+        <div class="flex items-start pt-1">
+          <input type="checkbox" id="register-terms" required class="w-4 h-4 mt-0.5 rounded-sm border-atelier text-olive focus:ring-gold bg-ivory dark:bg-charcoal-card">
+          <label for="register-terms" class="ml-2 text-xs text-neutral-500 leading-normal font-light">
+            I accept the ATELIER <a href="#" class="text-gold underline">Client Agreement</a> and consent to confidential correspondence.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button type="submit"
+                  class="w-full py-4 bg-charcoal dark:bg-olive hover:bg-gold hover:text-charcoal text-ivory text-[10px] uppercase tracking-[0.24em] font-semibold rounded-sm transition-all duration-300 shadow-xl flex items-center justify-center border border-gold/40">
+            Create Account
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Social Logins Divider -->
+      <div class="relative flex py-1 items-center">
+        <div class="flex-grow border-t border-atelier"></div>
+        <span class="flex-shrink mx-4 text-[9px] uppercase tracking-[0.26em] text-neutral-400">Or Register With</span>
+        <div class="flex-grow border-t border-atelier"></div>
+      </div>
+
+      <!-- Social Register Buttons -->
+      <div class="grid grid-cols-2 gap-3">
+        <button type="button" onclick="if(window.showToast) window.showToast('Google account registration initiated...'); setTimeout(()=>{ window.location.href='index.html'; }, 700);"
+                class="py-3 px-4 border border-atelier hover:border-gold rounded-sm text-xs text-charcoal-900 dark:text-ivory flex items-center justify-center gap-2 transition">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-gold"></i>
+          <span class="text-[11px] font-medium">Google</span>
+        </button>
+
+        <button type="button" onclick="if(window.showToast) window.showToast('Apple ID registration initiated...'); setTimeout(()=>{ window.location.href='index.html'; }, 700);"
+                class="py-3 px-4 border border-atelier hover:border-gold rounded-sm text-xs text-charcoal-900 dark:text-ivory flex items-center justify-center gap-2 transition">
+          <i data-lucide="apple" class="w-3.5 h-3.5 text-gold"></i>
+          <span class="text-[11px] font-medium">Apple ID</span>
+        </button>
+      </div>
+
+      <!-- Link to Login -->
+      <div class="text-center pt-2 border-t border-atelier text-xs text-neutral-500 font-light">
+        Already have an account? 
+        <a href="login.html" class="text-gold font-semibold hover:underline ml-1">Sign In</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="p-6 text-center text-xs text-neutral-500 border-t border-atelier font-light">
+    &copy; 2026 ATELIER Interior Design Studio. All rights reserved.
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

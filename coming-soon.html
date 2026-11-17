@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Renovation & Re-curation — ATELIER Interior Studio</title>
+  <meta name="description" content="ATELIER is currently updating its international architectural portfolio. Enter your private invitation email to receive priority launch access.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            secondary: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              light: '#e9e4db'
+            },
+            olive: {
+              DEFAULT: '#d5c3a5',
+              50: '#faf8f5',
+              100: '#f4ede1',
+              200: '#e8ded0',
+              300: '#ded0bc',
+              400: '#d5c3a5',
+              500: '#d5c3a5',
+              600: '#b8a584',
+              700: '#9b8765',
+              800: '#756346',
+              900: '#473a25'
+            },
+            gold: {
+              DEFAULT: '#d5c3a5',
+              light: '#e8ded0',
+              dark: '#b8a584'
+            },
+            ivory: {
+              DEFAULT: '#e9e4db',
+              light: '#f5f2ec',
+              dark: '#ded7cb',
+              muted: '#d2cbbe'
+            },
+            charcoal: {
+              DEFAULT: '#11120f',
+              surface: '#171813',
+              card: '#22231e',
+              border: '#33332b',
+              700: '#27271f',
+              800: '#1b1c17',
+              900: '#11120f',
+              950: '#0a0a08'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            monument: ['"Cinzel"', '"Cormorant Garamond"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-charcoal text-ivory font-sans min-h-screen relative overflow-hidden flex flex-col justify-between selection:bg-gold selection:text-charcoal">
+
+  <!-- Full-Screen Architectural Background -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85" 
+         alt="Luxury Interior Background" 
+         class="w-full h-full object-cover object-center filter brightness-[0.35] scale-105">
+    <div class="absolute inset-0 bg-charcoal-950/75 backdrop-blur-[2px]"></div>
+  </div>
+
+  <!-- Top Bar -->
+  <header class="relative z-10 p-6 sm:p-8 flex justify-between items-center max-w-7xl mx-auto w-full">
+    <a href="index.html" class="flex items-center gap-3.5 group">
+      <div class="w-10 h-10 rounded-sm bg-olive flex items-center justify-center text-ivory font-monument font-bold text-xl shadow-lg border border-gold/40">
+        A
+      </div>
+      <div>
+        <span class="font-monument text-lg tracking-[0.28em] font-semibold text-ivory block leading-none">ATELIER</span>
+        <span class="text-[8.5px] tracking-[0.3em] text-gold font-medium uppercase block mt-1">Architecture &bull; Interiors</span>
+      </div>
+    </a>
+          <div class="flex items-center gap-2.5 flex-shrink-0">
+        <!-- 1. Theme Toggle: Gold-Bordered Circle with Sun / Moon (as in 1st image) -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Theme" title="Toggle Light / Dark Sanctuary">
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3.5"/>
+            <line x1="12" y1="2" x2="12" y2="4.5"/>
+            <line x1="12" y1="19.5" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="4.5" y2="12"/>
+            <line x1="19.5" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+            <line x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+            <line x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+            <line x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+          </svg>
+          <svg class="w-4 h-4 text-gold flex-shrink-0 icon-moon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <!-- 2. RTL Toggle: Gold-Bordered Circle with Opposing Horizontal Arrows (as in 1st image) -->
+        <button class="rtl-toggle-btn w-9 h-9 rounded-full border border-gold/50 hover:border-gold bg-transparent hover:bg-gold/10 flex items-center justify-center text-gold transition-all duration-300 flex-shrink-0 shadow-sm" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction">
+          <svg class="w-4 h-4 text-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 7-4 3.5 4 3.5"/>
+            <path d="M4 10.5h16"/>
+            <path d="m16 13.5 4 3.5-4 3.5"/>
+            <path d="M20 17H4"/>
+          </svg>
+          <span class="sr-only rtl-text">RTL</span>
+        </button>
+      </div>
+  </header>
+
+  <!-- Central Coming Soon Content -->
+  <main class="relative z-10 max-w-3xl mx-auto px-4 py-12 text-center space-y-8">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/40 text-[9px] tracking-[0.28em] uppercase text-gold font-semibold">
+      <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+      Volume III &bull; Digital Curatorial Update
+    </div>
+
+    <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-light leading-[1.05] text-ivory">
+      Crafting Something <br>
+      <span class="italic font-normal text-gold">Extraordinary.</span>
+    </h1>
+
+    <p class="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto leading-relaxed font-light">
+      Our architectural monograph archive and private client vault are undergoing an intentional re-curation. Unveiling our new 2026/2027 collection shortly.
+    </p>
+
+    <!-- Real-time Live Countdown Timer -->
+    <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-lg mx-auto pt-4">
+      <div class="p-4 sm:p-6 bg-charcoal-900/90 backdrop-blur-md rounded-sm border border-gold/30 shadow-2xl">
+        <span id="countdown-days" class="font-monument text-2xl sm:text-4xl text-gold font-semibold block">18</span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-neutral-400 mt-1 block">Days</span>
+      </div>
+      <div class="p-4 sm:p-6 bg-charcoal-900/90 backdrop-blur-md rounded-sm border border-gold/30 shadow-2xl">
+        <span id="countdown-hours" class="font-monument text-2xl sm:text-4xl text-gold font-semibold block">07</span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-neutral-400 mt-1 block">Hours</span>
+      </div>
+      <div class="p-4 sm:p-6 bg-charcoal-900/90 backdrop-blur-md rounded-sm border border-gold/30 shadow-2xl">
+        <span id="countdown-minutes" class="font-monument text-2xl sm:text-4xl text-gold font-semibold block">42</span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-neutral-400 mt-1 block">Mins</span>
+      </div>
+      <div class="p-4 sm:p-6 bg-charcoal-900/90 backdrop-blur-md rounded-sm border border-gold/30 shadow-2xl">
+        <span id="countdown-seconds" class="font-monument text-2xl sm:text-4xl text-gold font-semibold block">19</span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-neutral-400 mt-1 block">Secs</span>
+      </div>
+    </div>
+
+    <!-- Private Invitation Form -->
+    <div class="pt-4 max-w-md mx-auto">
+      <form class="newsletter-form flex flex-col sm:flex-row gap-2.5">
+        <input type="email" placeholder="Enter your email for private reveal" required
+               class="flex-grow px-4 py-3.5 bg-charcoal-900/95 border border-white/20 rounded-sm text-xs text-ivory placeholder-neutral-400 focus:outline-none focus:border-gold transition">
+        <button type="submit" class="px-7 py-3.5 bg-olive hover:bg-gold hover:text-charcoal text-ivory text-[10px] uppercase tracking-[0.22em] font-semibold rounded-sm transition shadow-lg border border-gold/40">
+          Notify Me
+        </button>
+      </form>
+      <span class="text-[10px] text-neutral-400 block mt-2.5 font-light">Strictly confidential invitation. Zero promotional spam.</span>
+    </div>
+  </main>
+
+  <!-- Clean Bottom Bar -->
+  <footer class="relative z-10 p-6 text-center text-xs text-neutral-400 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between max-w-7xl mx-auto w-full gap-4 font-light">
+    <div>&copy; 2026 ATELIER Interior Design Studio. All rights reserved.</div>
+    <div class="flex items-center gap-6">
+      <a href="index.html" class="hover:text-gold transition">Home</a>
+      <a href="about.html" class="hover:text-gold transition">About</a>
+      <a href="contact.html" class="hover:text-gold transition">Contact</a>
+      <a href="login.html" class="hover:text-gold transition">Client Portal</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // Live countdown timer script
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 18);
+    targetDate.setHours(targetDate.getHours() + 7);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        const dEl = document.getElementById('countdown-days');
+        const hEl = document.getElementById('countdown-hours');
+        const mEl = document.getElementById('countdown-minutes');
+        const sEl = document.getElementById('countdown-seconds');
+
+        if (dEl) dEl.textContent = String(days).padStart(2, '0');
+        if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+        if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+        if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>

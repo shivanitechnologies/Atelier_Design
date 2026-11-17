@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none">
+  <!-- Architectural Mark -->
+  <g transform="translate(6, 6)">
+    <rect width="52" height="52" rx="3" fill="#d5c3a5"/>
+    <rect x="0.75" y="0.75" width="50.5" height="50.5" rx="2.25" stroke="#f5f2ec" stroke-opacity="0.3" stroke-width="0.75"/>
+    <path d="M26 10L13 42H18.8L21.8 33H30.2L33.2 42H39L26 10Z" fill="#11120f"/>
+    <polygon points="26,19 22.8,27.5 29.2,27.5" fill="#d5c3a5"/>
+    <line x1="26" y1="14" x2="26" y2="33" stroke="#11120f" stroke-width="1.2"/>
+    <circle cx="26" cy="11.5" r="1.5" fill="#f5f2ec"/>
+  </g>
+  <!-- Brand Typography -->
+  <text x="74" y="34" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#f5f2ec">ATELIER</text>
+  <text x="75" y="48" font-family="'DM Sans', 'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="600" letter-spacing="4" fill="#d5c3a5">ARCHITECTURE &bull; INTERIORS &bull; OBJECTS</text>
+</svg>
