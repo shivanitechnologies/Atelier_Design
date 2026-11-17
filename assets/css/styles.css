@@ -498,9 +498,119 @@ html:not(.dark) .home-dropdown-menu a:hover {
   color: #0a0a08;
 }
 
-/* 5. Process Stage Numbers & Badges: High contrast in light mode */
-html:not(.dark) span.text-gold:not(.hero *):not(header *):not(.badge-gold) {
-  color: #756346;
+/* ==========================================================================
+   5. High-Contrast Luxury Bronze Palette for Light Mode (html:not(.dark))
+   Guarantees WCAG AA/AAA legibility across ivory, travertine, and cards
+   ========================================================================== */
+
+/* Primary Accent Text & Headings on Light Backgrounds */
+html:not(.dark) .text-olive,
+html:not(.dark) .text-gold,
+html:not(.dark) a.text-olive,
+html:not(.dark) a.text-gold,
+html:not(.dark) span.text-olive,
+html:not(.dark) span.text-gold,
+html:not(.dark) em.text-gold,
+html:not(.dark) em.text-olive,
+html:not(.dark) h1 .text-gold,
+html:not(.dark) h1 .text-olive,
+html:not(.dark) h2 .text-gold,
+html:not(.dark) h2 .text-olive,
+html:not(.dark) h3 .text-gold,
+html:not(.dark) h3 .text-olive,
+html:not(.dark) th.text-gold,
+html:not(.dark) td.text-gold,
+html:not(.dark) p .text-gold,
+html:not(.dark) p .text-olive {
+  color: #6e542c !important;
+}
+
+/* Header Active Links, Hover States & Underlines in Light Mode */
+html:not(.dark) header a.text-olive,
+html:not(.dark) header a.text-gold,
+html:not(.dark) header button.text-olive,
+html:not(.dark) header button.text-gold,
+html:not(.dark) header .border-olive,
+html:not(.dark) header .border-gold {
+  color: #6e542c !important;
+  border-color: #6e542c !important;
+}
+
+html:not(.dark) header a:hover,
+html:not(.dark) header button:hover {
+  color: #6e542c !important;
+}
+
+/* Retain Champagne Gold on Permanently Dark / Charcoal Sections in Light Mode */
+html:not(.dark) #hero .text-gold,
+html:not(.dark) #hero em.text-gold,
+html:not(.dark) #hero span.text-gold,
+html:not(.dark) #hero .metric-num,
+html:not(.dark) #hero .scroll-indicator,
+html:not(.dark) #hero .scroll-indicator span,
+html:not(.dark) #hero .btn,
+html:not(.dark) #estimator .text-gold,
+html:not(.dark) #estimator #area-val,
+html:not(.dark) #estimator #budget-output,
+html:not(.dark) #estimator button.bg-gold,
+html:not(.dark) .bg-charcoal .text-gold,
+html:not(.dark) .bg-charcoal-950 .text-gold,
+html:not(.dark) .bg-charcoal-900 .text-gold,
+html:not(.dark) .bg-charcoal-card .text-gold,
+html:not(.dark) footer .text-gold,
+html:not(.dark) footer a:hover {
+  color: #d5c3a5 !important;
+}
+
+/* Large Stage & Watermark Numbers (01, 02, 03) in Light Mode */
+html:not(.dark) .text-gold\/30,
+html:not(.dark) [class*="text-gold/30"],
+html:not(.dark) [class*="text-gold/20"],
+html:not(.dark) [class*="text-gold/40"] {
+  color: rgba(110, 84, 44, 0.35) !important;
+}
+
+/* Icons & Icon Containers in Light Mode */
+html:not(.dark) .text-gold i,
+html:not(.dark) .text-olive i,
+html:not(.dark) i.text-gold,
+html:not(.dark) i.text-olive,
+html:not(.dark) svg.text-gold,
+html:not(.dark) svg.text-olive {
+  color: #6e542c !important;
+  stroke: #6e542c !important;
+}
+
+html:not(.dark) #hero i,
+html:not(.dark) #hero svg,
+html:not(.dark) footer i,
+html:not(.dark) footer svg {
+  color: #d5c3a5 !important;
+  stroke: #d5c3a5 !important;
+}
+
+html:not(.dark) .bg-gold\/15 {
+  background-color: rgba(110, 84, 44, 0.12) !important;
+}
+
+html:not(.dark) .bg-gold\/10 {
+  background-color: rgba(110, 84, 44, 0.08) !important;
+}
+
+html:not(.dark) .bg-gold\/20 {
+  background-color: rgba(110, 84, 44, 0.16) !important;
+}
+
+html:not(.dark) .border-gold\/40,
+html:not(.dark) .border-gold\/30,
+html:not(.dark) .border-gold\/20 {
+  border-color: rgba(110, 84, 44, 0.35) !important;
+}
+
+/* Badges & Tables in Light Mode */
+html:not(.dark) .badge-gold,
+html:not(.dark) [class*="badge-"] .text-gold {
+  color: #6e542c !important;
 }
 
 /* 6. Form inputs focus ring */
