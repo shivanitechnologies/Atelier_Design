@@ -189,6 +189,8 @@
   <!-- MOBILE NAVIGATION DRAWER -->
   <div id="mobile-menu-backdrop" class="fixed inset-0 bg-charcoal-950/80 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
   <aside id="mobile-menu" class="fixed inset-0 w-full h-full bg-ivory dark:bg-charcoal-900 z-50 p-6 sm:p-8 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 pointer-events-none border-l border-atelier overflow-y-auto">
+    
+    <!-- Top Header -->
     <div>
       <div class="flex items-center justify-between pb-5 border-b border-atelier">
         <a href="index.html" class="flex items-center gap-3">
@@ -235,52 +237,109 @@
         </div>
       </div>
 
-      <nav class="flex flex-col gap-1 mt-6 text-xs uppercase tracking-[0.2em] font-medium">
-        <a href="index.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Home 01 (Classic)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+      <!-- Navigation Section Label -->
+      <div class="flex items-center justify-between pt-6 pb-2 px-1">
+        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 font-semibold">Studio Directory</span>
+        <span class="text-[9px] tracking-[0.2em] font-mono text-gold/70">01 &mdash; 09</span>
+      </div>
+
+      <!-- Menu Items with Architectural Rhythm & Hover Cards -->
+      <nav class="flex flex-col space-y-1 mt-1 text-xs uppercase tracking-[0.2em] font-medium">
+        
+        <!-- 01. Home 01 (Classic) -->
+        <a href="index.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">01</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Home 01 &bull; Classic Sanctuary</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="home-2.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Home 02 (Premium)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 02. Home 02 (Premium) -->
+        <a href="home-2.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">02</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Home 02 &bull; Curated Edition</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="about.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>About Us</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 03. About Us -->
+        <a href="about.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">03</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">About Studio &bull; Heritage</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="services.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Services</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 04. Services -->
+        <a href="services.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">04</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Architectural Disciplines</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="service-details.html" class="py-2 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold pl-5 text-[11px] text-neutral-500 flex items-center justify-between ">
-          <span>&rarr; Service Details</span>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-40 rtl-flip"></i>
+
+        <!-- 05. Portfolio -->
+        <a href="portfolio.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">05</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Portfolio Archive</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="portfolio.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Portfolio Archive</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 06. Design Process -->
+        <a href="process.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">06</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Design Methodology</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="process.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Design Process</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 07. Pricing -->
+        <a href="pricing.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 bg-charcoal/5 dark:bg-gold/15 text-charcoal-950 dark:text-gold font-semibold border-l-2 border-charcoal-950 dark:border-gold">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">07</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Pricing & Tiers</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="pricing.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between text-olive dark:text-gold font-semibold">
-          <span>Pricing & Tiers</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 08. Journal / Blog -->
+        <a href="blog.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">08</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Journal & Spatial Essays</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="blog.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Journal / Blog</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
+
+        <!-- 09. Contact Us -->
+        <a href="contact.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">09</span>
+            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Contact & Consult</span>
+          </div>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
-        <a href="contact.html" class="py-2.5 px-2 border-b border-atelier/40 hover:text-olive dark:hover:text-gold flex items-center justify-between ">
-          <span>Contact Us</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 opacity-40 rtl-flip"></i>
-        </a>
+
       </nav>
     </div>
 
-    <div class="pt-6 border-t border-atelier my-4">
-      <a href="contact.html" class="w-full py-3.5 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center rounded-full shadow-md border border-gold transition-all duration-300">Book Free Consultation</a>
+    <!-- Bottom Action Button & Studio Telemetry -->
+    <div class="pt-5 border-t border-atelier my-4">
+      <a href="contact.html" class="w-full py-4 bg-gold hover:bg-ivory text-charcoal-950 hover:text-charcoal-900 text-xs uppercase tracking-[0.22em] font-semibold flex items-center justify-center gap-2 rounded-full shadow-lg border border-gold transition-all duration-300 group">
+        <span>Book Free Consultation</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 text-charcoal-950 group-hover:translate-x-1 transition-transform rtl-flip"></i>
+      </a>
+      <div class="flex items-center justify-between text-[8.5px] uppercase tracking-[0.25em] text-neutral-400 dark:text-neutral-500 pt-3 px-1">
+        <span>London &bull; Milan &bull; Zurich</span>
+        <span>ATELIER &bull; 2026</span>
+      </div>
     </div>
   </aside>
 

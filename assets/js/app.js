@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
   if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
 
-  document.querySelectorAll('#mobile-menu nav a, #mobile-menu .pt-6 a').forEach(link => {
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       closeMobileMenu();
     });

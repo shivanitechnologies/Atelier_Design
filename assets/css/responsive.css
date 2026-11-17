@@ -64,6 +64,27 @@
   transform: translateX(0) !important;
 }
 
+/* Mobile Sidebar Drawer Navigation Links - Luxury Tactile Styling */
+.mobile-nav-link {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mobile-nav-link:hover {
+  background-color: rgba(213, 195, 165, 0.16) !important;
+  color: #11120f !important;
+  transform: translateX(4px);
+}
+
+html.dark .mobile-nav-link:hover {
+  background-color: rgba(213, 195, 165, 0.12) !important;
+  color: #d5c3a5 !important;
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .mobile-nav-link:hover {
+  transform: translateX(-4px) !important;
+}
+
 /* ==========================================================================
    Hide Theme & RTL Toggles in Top Header on Mobile View (< 1024px)
    (They are already cleanly accessible inside the full-page mobile sidebar)
