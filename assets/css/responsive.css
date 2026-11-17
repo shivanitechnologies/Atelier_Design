@@ -65,6 +65,17 @@
 }
 
 /* ==========================================================================
+   Hide Theme & RTL Toggles in Top Header on Mobile View (< 1024px)
+   (They are already cleanly accessible inside the full-page mobile sidebar)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  header .theme-toggle-btn,
+  header .rtl-toggle-btn {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
    Responsive Editorial Typography & Mobile Viewport Alignment
    ========================================================================== */
 @media (max-width: 767px) {
