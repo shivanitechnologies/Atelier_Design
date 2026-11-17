@@ -523,7 +523,7 @@ select:focus {
     linear-gradient(180deg, #d8cebc 0%, #e3dbcc 100%) !important;
   border-bottom: 1px solid rgba(184, 165, 132, 0.45) !important;
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.45);
-  min-height: 400px;
+  min-height: 250px !important;
   width: 100% !important;
   position: relative;
   overflow: hidden;
@@ -544,15 +544,17 @@ html.dark .page-hero-banner {
 
 @media (min-width: 1024px) {
   .page-hero-banner {
-    min-height: 420px !important;
+    min-height: 270px !important;
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
   }
 }
 
 @media (max-width: 640px) {
   .page-hero-banner {
-    min-height: 320px !important;
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
+    min-height: 220px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 }
 
