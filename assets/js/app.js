@@ -97,6 +97,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeMobileMenu();
   });
 
+  // Mobile Home Accordion Dropdown
+  const mobileHomeBtn = document.getElementById('mobile-home-dropdown-btn');
+  const mobileHomeSublist = document.getElementById('mobile-home-sublist');
+  const mobileHomeChevron = document.getElementById('mobile-home-chevron');
+  if (mobileHomeBtn && mobileHomeSublist) {
+    mobileHomeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isHidden = mobileHomeSublist.classList.contains('hidden');
+      if (isHidden) {
+        mobileHomeSublist.classList.remove('hidden');
+        if (mobileHomeChevron) mobileHomeChevron.classList.add('rotate-180');
+        mobileHomeBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileHomeSublist.classList.add('hidden');
+        if (mobileHomeChevron) mobileHomeChevron.classList.remove('rotate-180');
+        mobileHomeBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   // Highlight Current Navigation Link
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav > a, #mobile-menu a').forEach(link => {

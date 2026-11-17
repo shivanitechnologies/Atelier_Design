@@ -386,94 +386,64 @@
         </div>
       </div>
 
-      <!-- Navigation Section Label -->
-      <div class="flex items-center justify-between pt-6 pb-2 px-1">
-        <span class="text-[9px] uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 font-semibold">Studio Directory</span>
-        <span class="text-[9px] tracking-[0.2em] font-mono text-gold/70">01 &mdash; 09</span>
-      </div>
-
-      <!-- Menu Items with Architectural Rhythm & Hover Cards -->
-      <nav class="flex flex-col space-y-1 mt-1 text-xs uppercase tracking-[0.2em] font-medium">
+      <!-- Navigation Menu: Matches Desktop Navbar Exactly (HOME, ABOUT, SERVICES, PORTFOLIO, PROCESS, CONTACT) -->
+      <nav class="flex flex-col space-y-2 mt-8 text-sm uppercase tracking-[0.22em] font-medium">
         
-        <!-- 01. Home 01 (Classic) -->
-        <a href="index.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 bg-charcoal/5 dark:bg-gold/15 text-charcoal-950 dark:text-gold font-semibold border-l-2 border-charcoal-950 dark:border-gold">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">01</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Home 01 &bull; Classic Sanctuary</span>
+        <!-- 1. HOME ⌄ (Accordion / Dropdown) -->
+        <div class="mobile-dropdown-wrapper">
+          <button type="button" class="mobile-nav-link w-full flex items-center justify-between px-4 py-3.5 rounded-md transition-all duration-200 cursor-pointer bg-charcoal/5 dark:bg-gold/15 text-charcoal-950 dark:text-gold font-semibold border-l-2 border-charcoal-950 dark:border-gold" id="mobile-home-dropdown-btn" aria-expanded="true">
+            <div class="flex items-center gap-2">
+              <span>Home</span>
+            </div>
+            <i data-lucide="chevron-down" id="mobile-home-chevron" class="w-4 h-4 text-gold transition-transform duration-300 rotate-180"></i>
+          </button>
+          
+          <div id="mobile-home-sublist" class=" pl-4 pr-2 pt-2 pb-1 space-y-1">
+            <a href="index.html" class="flex items-center justify-between px-3 py-2.5 rounded-md text-xs uppercase tracking-[0.18em] transition-all hover:bg-gold/10 text-olive dark:text-gold font-semibold bg-gold/10">
+              <span class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                <span>Home 01 &bull; Classic</span>
+              </span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-50 rtl-flip"></i>
+            </a>
+            <a href="home-2.html" class="flex items-center justify-between px-3 py-2.5 rounded-md text-xs uppercase tracking-[0.18em] transition-all hover:bg-gold/10 text-neutral-600 dark:text-neutral-400">
+              <span class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                <span>Home 02 &bull; Premium</span>
+              </span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-50 rtl-flip"></i>
+            </a>
           </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
+        </div>
+
+        <!-- 2. ABOUT -->
+        <a href="about.html" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-md transition-all duration-200 ">
+          <span>About</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
 
-        <!-- 02. Home 02 (Premium) -->
-        <a href="home-2.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">02</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Home 02 &bull; Curated Edition</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
+        <!-- 3. SERVICES -->
+        <a href="services.html" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-md transition-all duration-200 ">
+          <span>Services</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
 
-        <!-- 03. About Us -->
-        <a href="about.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">03</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">About Studio &bull; Heritage</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
+        <!-- 4. PORTFOLIO -->
+        <a href="portfolio.html" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-md transition-all duration-200 ">
+          <span>Portfolio</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
 
-        <!-- 04. Services -->
-        <a href="services.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">04</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Architectural Disciplines</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
+        <!-- 5. PROCESS -->
+        <a href="process.html" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-md transition-all duration-200 ">
+          <span>Process</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
 
-        <!-- 05. Portfolio -->
-        <a href="portfolio.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">05</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Portfolio Archive</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
-        </a>
-
-        <!-- 06. Design Process -->
-        <a href="process.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">06</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Design Methodology</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
-        </a>
-
-        <!-- 07. Pricing -->
-        <a href="pricing.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">07</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Pricing & Tiers</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
-        </a>
-
-        <!-- 08. Journal / Blog -->
-        <a href="blog.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">08</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Journal & Spatial Essays</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
-        </a>
-
-        <!-- 09. Contact Us -->
-        <a href="contact.html" class="mobile-nav-link group flex items-center justify-between px-3.5 py-3 rounded-md transition-all duration-200 ">
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] tracking-[0.2em] font-mono text-gold/60 group-hover:text-gold">09</span>
-            <span class="text-xs sm:text-[13px] tracking-[0.18em]">Contact & Consult</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
+        <!-- 6. CONTACT -->
+        <a href="contact.html" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 rounded-md transition-all duration-200 ">
+          <span>Contact</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-transform rtl-flip"></i>
         </a>
 
       </nav>
