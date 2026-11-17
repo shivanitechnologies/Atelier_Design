@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMA — Interior Design Studio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #11120f;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+  background: #11120f;
+  overflow-x: hidden;
+}
+
+/* HERO */
+
+.hero {
+  height: 500vh;
+  position: relative;
+  background: #11120f;
+}
+
+.sticky-hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #22231e;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.45),
+      transparent 75%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.48),
+      transparent 55%
+    );
+  pointer-events: none;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.logo {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+
+.logo span {
+  font-size: 10px;
+  display: block;
+  letter-spacing: 4px;
+  margin-top: 5px;
+  color: #d5c8b1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 38px;
+}
+
+.nav-links a,
+.nav-contact {
+  text-decoration: none;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 650px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #d7c8ac;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 105px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero-content h1 em {
+  color: #d5c3a5;
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 13px;
+  line-height: 2;
+  color: #e1ded7;
+  margin-top: 25px;
+  max-width: 370px;
+  letter-spacing: .5px;
+}
+
+/* BOTTOM DETAILS */
+
+.hero-bottom {
+  position: absolute;
+  bottom: 38px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+.scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 50px;
+  height: 1px;
+  background: #d5c3a5;
+}
+
+.frame-counter {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #eee4d3;
+}
+
+/* PROGRESS */
+
+.progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,.15);
+  z-index: 6;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #d5c3a5;
+}
+
+/* LOADER */
+
+.loader {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #171813;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  letter-spacing: 7px;
+}
+
+.loader-text {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c7b99e;
+  margin-top: 20px;
+}
+
+.loader-track {
+  width: 160px;
+  height: 1px;
+  background: #45443b;
+  margin-top: 25px;
+}
+
+.loader-progress {
+  width: 0%;
+  height: 100%;
+  background: #d5c3a5;
+}
+
+/* NEXT SECTION */
+
+.next-section {
+  min-height: 100vh;
+  padding: 140px 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #e9e4db;
+  color: #27271f;
+}
+
+.next-section .eyebrow {
+  color: #88785f;
+}
+
+.next-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6vw, 80px);
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+.next-section p {
+  max-width: 500px;
+  margin-top: 30px;
+  line-height: 2;
+  color: #69665e;
+  font-size: 14px;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+  .navbar {
+    padding: 25px 6%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    left: 7%;
+    right: 7%;
+    top: 55%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 12vw, 75px);
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-bottom {
+    left: 7%;
+    right: 7%;
+    bottom: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero" id="hero">
+
+  <div class="sticky-hero">
+
+    <canvas id="sequence"></canvas>
+
+    <div class="overlay"></div>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+      <div class="logo">
+        FORMA
+        <span>INTERIOR STUDIO</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+      </div>
+
+      <a class="nav-contact" href="mailto:hello@example.com">
+        Let's Talk ↗
+      </a>
+    </nav>
+
+    <!-- HERO TEXT -->
+
+    <div class="hero-content">
+      <div class="eyebrow">
+        Architecture · Interior · Lifestyle
+      </div>
+
+      <h1>
+        Spaces<br>
+        That <em>Speak.</em>
+      </h1>
+
+      <p class="hero-description">
+        We create timeless interiors where architecture,
+        craftsmanship and contemporary living come together.
+      </p>
+    </div>
+
+    <!-- BOTTOM -->
+
+    <div class="hero-bottom">
+      <div class="scroll-indicator">
+        <span class="scroll-line"></span>
+        Scroll to Explore
+      </div>
+
+      <div class="frame-counter" id="counter">
+        001 / 600
+      </div>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <!-- LOADING -->
+
+    <div class="loader" id="loader">
+      <div class="loader-logo">FORMA</div>
+      <div class="loader-text" id="loaderText">
+        PREPARING YOUR EXPERIENCE 0%
+      </div>
+      <div class="loader-track">
+        <div class="loader-progress" id="loaderProgress"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEXT SECTION -->
+
+<section class="next-section" id="about">
+  <div class="eyebrow">01 / Our Philosophy</div>
+
+  <h2>
+    Design is not just what you see.
+    It is how a space makes you feel.
+  </h2>
+
+  <p>
+    Every detail matters. From the texture of natural stone
+    to the warmth of ambient lighting, we design spaces
+    that bring beauty and meaning into everyday living.
+  </p>
+</section>
+
+<script>
+const canvas = document.getElementById("sequence");
+const ctx = canvas.getContext("2d");
+
+const frameCount = 600;
+const images = [];
+
+const hero = document.getElementById("hero");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+
+const loader = document.getElementById("loader");
+const loaderText = document.getElementById("loaderText");
+const loaderProgress = document.getElementById("loaderProgress");
+
+let currentFrame = 0;
+let loadedCount = 0;
+let imagesReady = false;
+let lastDrawnFrame = -1;
+
+function framePath(index) {
+  return `frames/frame_${String(index).padStart(4, "0")}.jpg`;
+}
+
+// LOAD ALL 600 FRAMES
+
+function loadImages() {
+  return new Promise((resolve) => {
+
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+
+      img.src = framePath(i + 1);
+
+      img.onload = () => {
+        loadedCount++;
+
+        const percentage = Math.round(
+          loadedCount / frameCount * 100
+        );
+
+        loaderText.textContent =
+          `PREPARING YOUR EXPERIENCE ${percentage}%`;
+
+        loaderProgress.style.width = percentage + "%";
+
+        if (loadedCount === frameCount) {
+          resolve();
+        }
+      };
+
+      img.onerror = () => {
+        loadedCount++;
+
+        loaderText.textContent =
+          `LOADING FRAMES ${Math.round(loadedCount / frameCount * 100)}%`;
+
+        if (loadedCount === frameCount) {
+          resolve();
+        }
+      };
+
+      images.push(img);
+    }
+  });
+}
+
+// RESPONSIVE CANVAS
+
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  drawFrame(currentFrame);
+}
+
+// DRAW FRAME WITH COVER FIT
+
+function drawFrame(index) {
+
+  const img = images[index];
+
+  if (!img || !img.complete || !img.naturalWidth) {
+    return;
+  }
+
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  const imageRatio = img.naturalWidth / img.naturalHeight;
+  const screenRatio = width / height;
+
+  let drawWidth, drawHeight;
+
+  if (imageRatio > screenRatio) {
+    drawHeight = height;
+    drawWidth = height * imageRatio;
+  } else {
+    drawWidth = width;
+    drawHeight = width / imageRatio;
+  }
+
+  const x = (width - drawWidth) / 2;
+  const y = (height - drawHeight) / 2;
+
+  ctx.clearRect(0, 0, width, height);
+
+  ctx.drawImage(
+    img,
+    x,
+    y,
+    drawWidth,
+    drawHeight
+  );
+
+  lastDrawnFrame = index;
+}
+
+// GET SCROLL PROGRESS
+
+function updateAnimation() {
+
+  const rect = hero.getBoundingClientRect();
+
+  const scrollableDistance =
+    hero.offsetHeight - window.innerHeight;
+
+  const scrolled = Math.max(
+    0,
+    Math.min(scrollableDistance, -rect.top)
+  );
+
+  const scrollProgress = scrollableDistance > 0
+    ? scrolled / scrollableDistance
+    : 0;
+
+  const frame = Math.min(
+    frameCount - 1,
+    Math.floor(scrollProgress * (frameCount - 1))
+  );
+
+  currentFrame = frame;
+
+  if (frame !== lastDrawnFrame) {
+    drawFrame(frame);
+  }
+
+  counter.textContent =
+    `${String(frame + 1).padStart(3, "0")} / 600`;
+
+  progress.style.width =
+    `${scrollProgress * 100}%`;
+}
+
+// SCROLL ANIMATION
+
+let ticking = false;
+
+window.addEventListener("scroll", () => {
+
+  if (!imagesReady) return;
+
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      updateAnimation();
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+
+}, { passive: true });
+
+// INITIALIZE
+
+async function init() {
+
+  resizeCanvas();
+
+  await loadImages();
+
+  imagesReady = true;
+
+  loader.classList.add("hidden");
+
+  drawFrame(0);
+
+  updateAnimation();
+}
+
+window.addEventListener("resize", resizeCanvas);
+
+init();
+</script>
+
+</body>
+</html>
