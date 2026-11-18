@@ -903,6 +903,36 @@ html:not(.dark) .border-gold\/40.bg-gold\/10 {
   background-color: rgba(90, 69, 34, 0.08) !important;
 }
 
+/* ==========================================================================
+   Footer Social & Like Icons Styling
+   ========================================================================== */
+footer .studio-like-btn {
+  transition: all 0.3s ease;
+}
+
+footer .studio-like-btn:hover {
+  transform: translateY(-2px);
+  border-color: #d5c3a5 !important;
+}
+
+footer .studio-like-btn.liked {
+  border-color: #d5c3a5 !important;
+  background-color: rgba(213, 195, 165, 0.18) !important;
+  color: #d5c3a5 !important;
+}
+
+footer .studio-like-btn.liked svg {
+  fill: #d5c3a5 !important;
+  stroke: #d5c3a5 !important;
+  color: #d5c3a5 !important;
+}
+
+footer a[aria-label]:hover svg,
+footer button.studio-like-btn:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.25s ease;
+}
+
 
 
 

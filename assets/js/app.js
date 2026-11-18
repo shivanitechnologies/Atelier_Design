@@ -262,4 +262,19 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 350);
     }, 4000);
   };
+
+  // Footer Studio Appreciation / Like Button
+  document.querySelectorAll('.studio-like-btn').forEach(btn => {
+    if (localStorage.getItem('atelier-studio-liked') === 'true') {
+      btn.classList.add('liked');
+    }
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isLiked = btn.classList.toggle('liked');
+      localStorage.setItem('atelier-studio-liked', isLiked ? 'true' : 'false');
+      if (isLiked && window.atelierToast) {
+        window.atelierToast.show('Thank you for appreciating ATELIER Studio!', 'success', 2500);
+      }
+    });
+  });
 });
