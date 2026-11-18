@@ -71,8 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeMobileMenu() {
     if (mobileMenu) {
-      const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
-      mobileMenu.classList.add(isRTL ? '-translate-x-full' : 'translate-x-full');
+      mobileMenu.classList.add('translate-x-full');
       mobileMenu.classList.remove('pointer-events-auto', 'opacity-100');
       mobileMenu.classList.add('pointer-events-none', 'opacity-0');
       document.body.classList.remove('overflow-hidden');
