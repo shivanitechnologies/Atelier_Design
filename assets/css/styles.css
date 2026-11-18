@@ -747,9 +747,23 @@ input[type=range].estimator-slider::-moz-range-thumb {
   background: #11120f;
 }
 
-@media (max-width: 768px) {
-  .hero-sequence-container {
-    height: 220vh !important;
+@media (max-width: 1024px) {
+  .hero-sequence-container,
+  #hero.hero-sequence-container {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .sticky-hero {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
   }
 }
 

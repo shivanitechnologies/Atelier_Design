@@ -118,11 +118,38 @@
     drawFrame(Math.round(currentFrame));
   }
 
+  function isMobile() {
+    return window.innerWidth < 1024;
+  }
+
   const heroContent = document.querySelector("#hero .hero-content");
 
   // Calculate scroll progress through hero section
   function updateScrollTarget() {
     if (!hero) return;
+
+    const header = document.getElementById("main-header");
+
+    // On mobile view (< 1024px): Disable scrolling sequence/effects for natural, clean single-screen hero
+    if (isMobile()) {
+      targetFrame = 0;
+      currentFrame = 0;
+      if (heroContent) {
+        heroContent.style.opacity = "";
+        heroContent.style.transform = "";
+        heroContent.style.pointerEvents = "";
+      }
+      if (header) {
+        if (window.scrollY >= (hero.offsetHeight - 80)) {
+          header.classList.add("header-scrolled-page");
+          header.classList.remove("header-on-hero");
+        } else {
+          header.classList.add("header-on-hero");
+          header.classList.remove("header-scrolled-page");
+        }
+      }
+      return;
+    }
 
     const scrollableDistance = hero.offsetHeight - window.innerHeight;
     const scrolled = Math.max(0, Math.min(scrollableDistance, window.scrollY));
@@ -130,7 +157,7 @@
 
     targetFrame = scrollProgress * (frameCount - 1);
 
-    // Smooth fade out of hero narrative text between 0% and 18% of scroll
+    // Smooth fade out of hero narrative text between 0% and 18% of scroll (Desktop only)
     if (heroContent) {
       const fadeProgress = Math.min(1, scrollProgress / 0.18);
       const opacity = Math.max(0, 1 - fadeProgress);
@@ -140,7 +167,6 @@
     }
 
     // Dynamic header styling: Dark glass over hero canvas, luxury frosted on page content
-    const header = document.getElementById("main-header");
     if (header) {
       if (window.scrollY >= (hero.offsetHeight - 80)) {
         header.classList.add("header-scrolled-page");
@@ -152,8 +178,16 @@
     }
   }
 
-  // Smooth, relaxed interpolation loop (0.12 lerp for silky, responsive pacing)
+  // Smooth, relaxed interpolation loop (0.12 lerp for silky, responsive pacing on desktop)
   function animationLoop() {
+    if (isMobile()) {
+      if (lastDrawnFrame !== 0) {
+        drawFrame(0);
+      }
+      requestAnimationFrame(animationLoop);
+      return;
+    }
+
     const delta = targetFrame - currentFrame;
     if (Math.abs(delta) > 0.005) {
       currentFrame += delta * 0.12;
