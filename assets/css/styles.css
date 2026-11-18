@@ -1008,6 +1008,189 @@ footer button.studio-like-btn:hover svg {
   }
 }
 
+/* ==========================================================================
+   Luxury Bespoke Select Dropdown Component
+   Eliminates generic OS blue highlights & provides editorial gold aesthetic
+   ========================================================================== */
+.luxury-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.luxury-select-wrapper.is-open {
+  z-index: 45 !important;
+}
+
+.luxury-select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background-color: #faf8f5;
+  border: 1px solid rgba(213, 195, 165, 0.6);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #171813;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  text-align: left;
+  outline: none;
+}
+
+[dir="rtl"] .luxury-select-trigger {
+  text-align: right;
+}
+
+html.dark .luxury-select-trigger {
+  background-color: #22231e;
+  border-color: rgba(213, 195, 165, 0.25);
+  color: #f7f5f0;
+}
+
+.luxury-select-trigger:hover,
+.luxury-select-wrapper.is-open .luxury-select-trigger {
+  border-color: #d5c3a5 !important;
+  box-shadow: 0 0 0 1px rgba(213, 195, 165, 0.45);
+}
+
+.luxury-select-trigger.border-rose-500 {
+  border-color: #f43f5e !important;
+  box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.4) !important;
+}
+
+.luxury-select-chevron {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #c9ae83;
+}
+
+.luxury-select-wrapper.is-open .luxury-select-chevron {
+  transform: rotate(180deg);
+}
+
+.luxury-select-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(250, 248, 245, 0.98);
+  border: 1px solid rgba(213, 195, 165, 0.45);
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(17, 18, 15, 0.16), 0 4px 12px rgba(17, 18, 15, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+html.dark .luxury-select-dropdown {
+  background-color: rgba(26, 27, 22, 0.98);
+  border-color: rgba(213, 195, 165, 0.35);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65), 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.luxury-select-wrapper.is-open .luxury-select-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.luxury-select-list {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+/* Custom Luxury Scrollbar */
+.luxury-select-list::-webkit-scrollbar {
+  width: 5px;
+}
+.luxury-select-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.luxury-select-list::-webkit-scrollbar-thumb {
+  background: rgba(213, 195, 165, 0.35);
+  border-radius: 4px;
+}
+.luxury-select-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(213, 195, 165, 0.65);
+}
+
+.luxury-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9.5px 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.015em;
+  color: #27271f;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+html.dark .luxury-select-option {
+  color: #e5e2da;
+}
+
+.luxury-select-option:hover {
+  background-color: rgba(213, 195, 165, 0.2);
+  color: #11120f;
+  padding-left: 20px;
+}
+
+[dir="rtl"] .luxury-select-option:hover {
+  padding-left: 16px;
+  padding-right: 20px;
+}
+
+html.dark .luxury-select-option:hover {
+  background-color: rgba(213, 195, 165, 0.18);
+  color: #d5c3a5;
+}
+
+.luxury-select-option.is-selected {
+  background-color: rgba(213, 195, 165, 0.14);
+  color: #9c7f51;
+  font-weight: 600;
+}
+
+html.dark .luxury-select-option.is-selected {
+  background-color: rgba(213, 195, 165, 0.18);
+  color: #d5c3a5;
+  font-weight: 600;
+}
+
+.luxury-select-option .option-check {
+  display: none;
+  color: #9c7f51;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+[dir="rtl"] .luxury-select-option .option-check {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+html.dark .luxury-select-option .option-check {
+  color: #d5c3a5;
+}
+
+.luxury-select-option.is-selected .option-check {
+  display: inline-flex;
+}
+
+
 
 
 

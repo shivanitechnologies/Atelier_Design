@@ -40,17 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Clear previous error messages
       consultationForm.querySelectorAll('.form-error').forEach(el => el.remove());
-      consultationForm.querySelectorAll('input, select, textarea').forEach(el => {
+      consultationForm.querySelectorAll('input, select, textarea, .luxury-select-trigger').forEach(el => {
         el.classList.remove('border-rose-500', 'focus:border-rose-500');
       });
 
       function showError(field, msg) {
         isValid = false;
         field.classList.add('border-rose-500', 'focus:border-rose-500');
+        const customTrigger = field.closest('.luxury-select-wrapper')?.querySelector('.luxury-select-trigger');
+        if (customTrigger) {
+          customTrigger.classList.add('border-rose-500');
+        }
         const err = document.createElement('p');
         err.className = 'form-error text-xs text-rose-500 mt-1 font-medium';
         err.textContent = msg;
-        field.parentNode.appendChild(err);
+        const targetContainer = field.closest('.luxury-select-wrapper') || field;
+        targetContainer.parentNode.appendChild(err);
       }
 
       if (fullName && !fullName.value.trim()) {

@@ -286,4 +286,193 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ==========================================================================
+  // Bespoke Luxury Custom Select Component
+  // Transforms native browser selects into editorial champagne gold dropdowns
+  // ==========================================================================
+  function initLuxurySelects() {
+    const selects = document.querySelectorAll('select.luxury-select, #consultation-form select, .form-select');
+    
+    selects.forEach(select => {
+      if (select.dataset.luxuryInit === 'true') return;
+      select.dataset.luxuryInit = 'true';
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'luxury-select-wrapper relative w-full';
+
+      select.parentNode.insertBefore(wrapper, select);
+      wrapper.appendChild(select);
+
+      select.classList.add('sr-only');
+      select.tabIndex = -1;
+      select.setAttribute('aria-hidden', 'true');
+      select.style.position = 'absolute';
+      select.style.width = '1px';
+      select.style.height = '1px';
+      select.style.padding = '0';
+      select.style.margin = '-1px';
+      select.style.overflow = 'hidden';
+      select.style.clip = 'rect(0, 0, 0, 0)';
+      select.style.border = '0';
+
+      const selectedOption = select.options[select.selectedIndex] || select.options[0];
+      const initialText = selectedOption ? selectedOption.text : 'Select...';
+
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'luxury-select-trigger';
+      trigger.setAttribute('aria-haspopup', 'listbox');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.innerHTML = `
+        <span class="luxury-select-label truncate">${escapeHtml(initialText)}</span>
+        <span class="luxury-select-chevron flex-shrink-0 ml-2">
+          <svg class="w-4 h-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </span>
+      `;
+      wrapper.appendChild(trigger);
+
+      const dropdown = document.createElement('div');
+      dropdown.className = 'luxury-select-dropdown';
+      dropdown.setAttribute('role', 'listbox');
+
+      const list = document.createElement('div');
+      list.className = 'luxury-select-list';
+
+      Array.from(select.options).forEach((opt, idx) => {
+        const optEl = document.createElement('div');
+        const isSelected = idx === select.selectedIndex;
+        optEl.className = 'luxury-select-option' + (isSelected ? ' is-selected' : '');
+        optEl.setAttribute('role', 'option');
+        optEl.setAttribute('data-value', opt.value);
+        optEl.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        
+        optEl.innerHTML = `
+          <span class="option-label truncate">${escapeHtml(opt.text)}</span>
+          <span class="option-check flex-shrink-0">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+        `;
+
+        optEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          select.value = opt.value;
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+          
+          trigger.querySelector('.luxury-select-label').textContent = opt.text;
+          trigger.classList.remove('border-rose-500');
+          
+          list.querySelectorAll('.luxury-select-option').forEach(el => {
+            el.classList.remove('is-selected');
+            el.setAttribute('aria-selected', 'false');
+          });
+          optEl.classList.add('is-selected');
+          optEl.setAttribute('aria-selected', 'true');
+
+          closeDropdown();
+          trigger.focus();
+        });
+
+        list.appendChild(optEl);
+      });
+
+      dropdown.appendChild(list);
+      wrapper.appendChild(dropdown);
+
+      function openDropdown() {
+        document.querySelectorAll('.luxury-select-wrapper.is-open').forEach(w => {
+          if (w !== wrapper) {
+            w.classList.remove('is-open');
+            const trig = w.querySelector('.luxury-select-trigger');
+            if (trig) trig.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrapper.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeDropdown() {
+        wrapper.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (wrapper.classList.contains('is-open')) {
+          closeDropdown();
+        } else {
+          openDropdown();
+        }
+      });
+
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          openDropdown();
+        } else if (e.key === 'Escape') {
+          closeDropdown();
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!wrapper.contains(e.target)) {
+          closeDropdown();
+        }
+      });
+
+      select.addEventListener('change', () => {
+        const curOpt = select.options[select.selectedIndex];
+        if (curOpt) {
+          trigger.querySelector('.luxury-select-label').textContent = curOpt.text;
+          list.querySelectorAll('.luxury-select-option').forEach(el => {
+            const match = el.getAttribute('data-value') === curOpt.value;
+            el.classList.toggle('is-selected', match);
+            el.setAttribute('aria-selected', match ? 'true' : 'false');
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('reset', () => {
+        setTimeout(() => {
+          form.querySelectorAll('.luxury-select-wrapper').forEach(wrapper => {
+            const select = wrapper.querySelector('select');
+            const trigger = wrapper.querySelector('.luxury-select-trigger');
+            if (select && trigger) {
+              const opt = select.options[select.selectedIndex] || select.options[0];
+              if (opt) {
+                trigger.querySelector('.luxury-select-label').textContent = opt.text;
+                wrapper.querySelectorAll('.luxury-select-option').forEach(el => {
+                  const match = el.getAttribute('data-value') === opt.value;
+                  el.classList.toggle('is-selected', match);
+                  el.setAttribute('aria-selected', match ? 'true' : 'false');
+                });
+              }
+            }
+          });
+        }, 50);
+      });
+    });
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>'"]/g,
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+  }
+
+  window.initLuxurySelects = initLuxurySelects;
+  initLuxurySelects();
 });
