@@ -821,6 +821,18 @@ body.home-1 header#main-header.header-on-hero #home-dropdown-btn i {
   color: #ffffff !important;
 }
 
+/* Brand Wordmark Subtitle: "ARCHITECTURE • INTERIORS" in high-contrast champagne gold */
+body.home-1 header#main-header.header-on-hero .logo-subtext,
+body.home-1 header#main-header.header-on-hero a span[class*="text-olive"],
+body.home-1 header#main-header.header-on-hero a span.text-olive,
+body.home-1 header#main-header.header-on-hero a span.text-gold,
+html:not(.dark) body.home-1 header#main-header.header-on-hero .logo-subtext,
+html:not(.dark) body.home-1 header#main-header.header-on-hero a span[class*="text-olive"],
+html:not(.dark) body.home-1 header#main-header.header-on-hero a span.text-olive,
+html:not(.dark) body.home-1 header#main-header.header-on-hero a span.text-gold {
+  color: #d5c3a5 !important;
+}
+
 body.home-1 header#main-header.header-on-hero nav a:hover,
 body.home-1 header#main-header.header-on-hero #home-dropdown-btn:hover span {
   color: #d5c3a5 !important;
@@ -863,6 +875,11 @@ body.home-1 header#main-header.header-scrolled-page #home-dropdown-btn span {
   color: #11120f !important;
 }
 
+html:not(.dark) body.home-1 header#main-header.header-scrolled-page .logo-subtext,
+html:not(.dark) body.home-1 header#main-header.header-scrolled-page a span[class*="text-olive"] {
+  color: #5a4522 !important;
+}
+
 html.dark body.home-1 header#main-header.header-scrolled-page {
   background-color: rgba(17, 18, 15, 0.95) !important;
   border-bottom: 1px solid rgba(213, 195, 165, 0.15) !important;
@@ -873,6 +890,22 @@ html.dark body.home-1 header#main-header.header-scrolled-page .font-monument,
 html.dark body.home-1 header#main-header.header-scrolled-page nav a,
 html.dark body.home-1 header#main-header.header-scrolled-page #home-dropdown-btn span {
   color: #f5f2ec !important;
+}
+
+html.dark body.home-1 header#main-header.header-scrolled-page .logo-subtext,
+html.dark body.home-1 header#main-header.header-scrolled-page a span[class*="text-olive"] {
+  color: #d5c3a5 !important;
+}
+
+/* Universal Dark Mode: Brand subtitle "ARCHITECTURE • INTERIORS" always luminous Champagne Gold */
+html.dark header a span[class*="text-olive"],
+html.dark header a span.text-olive,
+html.dark header a span.text-gold,
+html.dark #mobile-menu a span[class*="text-olive"],
+html.dark #mobile-menu a span.text-olive,
+html.dark #mobile-menu a span.text-gold,
+html.dark .logo-subtext {
+  color: #d5c3a5 !important;
 }
 
 /* Specific contrast boosts for Light Mode elements identified in user audits */
