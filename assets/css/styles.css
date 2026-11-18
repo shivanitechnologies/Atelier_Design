@@ -5,7 +5,7 @@
    Secondary: Obsidian Warm Noir (#11120f) / Cashmere Alabaster (#e9e4db)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
   /* 2-Color Architecture Palette */
@@ -41,7 +41,7 @@
 /* Base resets & typography */
 html {
   scroll-behavior: smooth;
-  font-family: 'DM Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--color-canvas-light);
   color: var(--color-text-main);
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -56,6 +56,7 @@ html.dark {
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,15 +64,15 @@ body {
 
 /* Typography Utilities */
 .font-serif {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-sans {
-  font-family: 'DM Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .font-monument {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Playfair Display', 'Cinzel', serif;
 }
 
 /* Architectural Hairline Borders */
