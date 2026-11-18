@@ -65,6 +65,14 @@
     return null;
   }
 
+  function getCanvasViewport() {
+    const parent = canvas.parentElement;
+    return {
+      width: parent && parent.clientWidth ? parent.clientWidth : window.innerWidth,
+      height: parent && parent.clientHeight ? parent.clientHeight : window.innerHeight
+    };
+  }
+
   // Draw frame with object-cover aspect ratio
   function drawFrame(index) {
     const img = getSafeFrame(index);
@@ -73,8 +81,7 @@
       return;
     }
 
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const { width, height } = getCanvasViewport();
 
     const imageRatio = img.naturalWidth / img.naturalHeight;
     const screenRatio = width / height;
@@ -100,15 +107,18 @@
   // Responsive canvas sizing with DPR scaling
   function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const { width, height } = getCanvasViewport();
 
-    canvas.width = Math.round(window.innerWidth * dpr);
-    canvas.height = Math.round(window.innerHeight * dpr);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     lastDrawnFrame = -1;
     drawFrame(Math.round(currentFrame));
   }
+
+  const heroContent = document.querySelector("#hero .hero-content");
 
   // Calculate scroll progress through hero section
   function updateScrollTarget() {
@@ -119,6 +129,15 @@
     const scrollProgress = scrollableDistance > 0 ? scrolled / scrollableDistance : 0;
 
     targetFrame = scrollProgress * (frameCount - 1);
+
+    // Smooth fade out of hero narrative text between 0% and 18% of scroll
+    if (heroContent) {
+      const fadeProgress = Math.min(1, scrollProgress / 0.18);
+      const opacity = Math.max(0, 1 - fadeProgress);
+      heroContent.style.opacity = opacity.toFixed(2);
+      heroContent.style.pointerEvents = opacity < 0.1 ? "none" : "auto";
+      heroContent.style.transform = `translateY(calc(-50% - ${fadeProgress * 25}px))`;
+    }
 
     // Dynamic header styling: Dark glass over hero canvas, luxury frosted on page content
     const header = document.getElementById("main-header");

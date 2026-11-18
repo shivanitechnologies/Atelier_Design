@@ -1,13 +1,14 @@
 /**
- * ATELIER Interior Design Studio - Theme Manager
+ * ATELIER Interior Design Studio - Theme & RTL Manager
  */
 
 (function () {
   'use strict';
 
   const THEME_KEY = 'atelier-theme';
+  const RTL_KEY = 'atelier-rtl';
 
-  // Apply theme immediately to avoid flash
+  // Apply theme & direction immediately to avoid flash of unstyled content
   function applyInitialTheme() {
     const savedTheme = localStorage.getItem(THEME_KEY);
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -19,21 +20,28 @@
       document.documentElement.classList.remove('dark');
     }
 
-    // Always enforce clean LTR direction and remove any stale RTL flags
-    document.documentElement.setAttribute('dir', 'ltr');
-    try {
-      localStorage.removeItem('atelier-rtl');
-    } catch (e) {}
+    const savedRTL = localStorage.getItem(RTL_KEY);
+    if (savedRTL === 'rtl') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+    }
   }
 
   applyInitialTheme();
 
   document.addEventListener('DOMContentLoaded', () => {
     updateThemeUI();
+    updateRTLUI();
 
     // Attach theme toggle listeners
     document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
       btn.addEventListener('click', toggleTheme);
+    });
+
+    // Attach RTL toggle listeners
+    document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', toggleRTL);
     });
   });
 
@@ -68,8 +76,28 @@
     });
   }
 
+  function toggleRTL() {
+    const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+    const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+    document.documentElement.setAttribute('dir', newDir);
+    localStorage.setItem(RTL_KEY, newDir);
+    updateRTLUI();
+  }
+
+  function updateRTLUI() {
+    const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
+      btn.setAttribute('aria-label', isRTL ? 'Switch to LTR' : 'Switch to RTL');
+      const textSpan = btn.querySelector('.rtl-text');
+      if (textSpan) {
+        textSpan.textContent = isRTL ? 'LTR' : 'RTL';
+      }
+    });
+  }
+
   // Expose globally
   window.atelierTheme = {
-    toggleTheme
+    toggleTheme,
+    toggleRTL
   };
 })();

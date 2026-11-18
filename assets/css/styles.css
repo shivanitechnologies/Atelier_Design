@@ -742,15 +742,23 @@ input[type=range].estimator-slider::-moz-range-thumb {
    ========================================================================== */
 
 .hero-sequence-container {
-  height: 500vh;
+  height: 380vh;
   position: relative;
   background: #11120f;
 }
 
+@media (max-width: 768px) {
+  .hero-sequence-container {
+    height: 220vh !important;
+  }
+}
+
 .sticky-hero {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
   overflow: hidden;
   background: #171813;
