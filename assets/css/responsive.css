@@ -338,6 +338,22 @@ html.dark .mobile-nav-link:hover {
     pointer-events: none !important;
   }
 
+  /* Mobile Portfolio Category Filter: Free natural scroll with zero viewport blockage */
+  .portfolio-filter-section,
+  section.portfolio-filter-section,
+  section:has(.portfolio-filter-btn) {
+    position: relative !important;
+    top: auto !important;
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+    z-index: 10 !important;
+  }
+
+  .portfolio-filter-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
   /* Universal Mobile Section Spacing & Text Balance */
   section {
     box-sizing: border-box !important;

@@ -136,6 +136,19 @@ body {
   background: #e8ded0;
 }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Header Glassmorphism */
 .header-scrolled {
   background-color: rgba(233, 228, 219, 0.94);
