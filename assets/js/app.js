@@ -50,13 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Navigation Drawer
+  // Mobile Navigation Drawer (Strictly for mobile view < 1024px)
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenuClose = document.getElementById('mobile-menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
 
   function openMobileMenu() {
+    // Strictly prevent opening on desktop view
+    if (window.innerWidth >= 1024) return;
+
     if (mobileMenu) {
       mobileMenu.classList.remove('translate-x-full', '-translate-x-full');
       mobileMenu.classList.remove('pointer-events-none', 'opacity-0');
@@ -81,6 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  // Auto-close on resize to desktop view
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      closeMobileMenu();
+    }
+  });
 
   if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', openMobileMenu);
   if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);

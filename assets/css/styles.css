@@ -989,6 +989,26 @@ footer button.studio-like-btn:hover svg {
   transition: transform 0.25s ease;
 }
 
+/* ==========================================================================
+   Desktop View: Strictly Disable & Remove Sidebar / Drawer Features
+   ========================================================================== */
+@media (min-width: 1024px) {
+  #mobile-menu,
+  #mobile-menu-backdrop,
+  #mobile-menu-toggle,
+  .mobile-dropdown-wrapper {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -999 !important;
+  }
+}
+
+
 
 
 
