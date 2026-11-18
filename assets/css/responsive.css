@@ -126,10 +126,10 @@ html.dark .mobile-nav-link:hover {
 
   /* Hero Section on Mobile: Standard Luxury Single-Screen View (No Scrolling Hijack / Effects) */
   #hero.hero-sequence-container {
-    height: 100vh !important;
-    height: 100dvh !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    height: calc(100vh - 80px) !important;
+    height: calc(100dvh - 80px) !important;
+    min-height: calc(100vh - 80px) !important;
+    min-height: calc(100dvh - 80px) !important;
     position: relative !important;
     overflow: hidden !important;
     background: #11120f !important;
@@ -141,8 +141,8 @@ html.dark .mobile-nav-link:hover {
     left: auto !important;
     width: 100% !important;
     height: 100% !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    min-height: calc(100vh - 80px) !important;
+    min-height: calc(100dvh - 80px) !important;
     overflow: hidden !important;
     background: #171813 !important;
     z-index: 10 !important;
@@ -168,7 +168,7 @@ html.dark .mobile-nav-link:hover {
   /* Hero Narrative Content on Mobile: Flawless Optical Alignment, Crisp Typography & Zero Void */
   #hero .hero-content {
     position: absolute !important;
-    top: calc(50% + 36px) !important;
+    top: 50% !important;
     left: 1.25rem !important;
     right: 1.25rem !important;
     width: auto !important;

@@ -139,15 +139,6 @@
         heroContent.style.transform = "";
         heroContent.style.pointerEvents = "";
       }
-      if (header) {
-        if (window.scrollY >= (hero.offsetHeight - 80)) {
-          header.classList.add("header-scrolled-page");
-          header.classList.remove("header-on-hero");
-        } else {
-          header.classList.add("header-on-hero");
-          header.classList.remove("header-scrolled-page");
-        }
-      }
       return;
     }
 
@@ -164,17 +155,6 @@
       heroContent.style.opacity = opacity.toFixed(2);
       heroContent.style.pointerEvents = opacity < 0.1 ? "none" : "auto";
       heroContent.style.transform = `translateY(calc(-50% - ${fadeProgress * 25}px))`;
-    }
-
-    // Dynamic header styling: Dark glass over hero canvas, luxury frosted on page content
-    if (header) {
-      if (window.scrollY >= (hero.offsetHeight - 80)) {
-        header.classList.add("header-scrolled-page");
-        header.classList.remove("header-on-hero");
-      } else {
-        header.classList.add("header-on-hero");
-        header.classList.remove("header-scrolled-page");
-      }
     }
   }
 

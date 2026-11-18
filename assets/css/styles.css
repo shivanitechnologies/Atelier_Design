@@ -750,10 +750,10 @@ input[type=range].estimator-slider::-moz-range-thumb {
 @media (max-width: 1024px) {
   .hero-sequence-container,
   #hero.hero-sequence-container {
-    height: 100vh !important;
-    height: 100dvh !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    height: calc(100vh - 80px) !important;
+    height: calc(100dvh - 80px) !important;
+    min-height: calc(100vh - 80px) !important;
+    min-height: calc(100dvh - 80px) !important;
     position: relative !important;
     overflow: hidden !important;
   }
@@ -762,17 +762,17 @@ input[type=range].estimator-slider::-moz-range-thumb {
     top: auto !important;
     left: auto !important;
     height: 100% !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    min-height: calc(100vh - 80px) !important;
+    min-height: calc(100dvh - 80px) !important;
   }
 }
 
 .sticky-hero {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100dvh;
+  top: 80px;
+  height: calc(100vh - 80px);
+  height: calc(100dvh - 80px);
   width: 100%;
   overflow: hidden;
   background: #171813;
@@ -820,96 +820,6 @@ body.home-1 {
   scroll-behavior: auto !important;
 }
 
-/* Header Floating Overlay over Dark Hero Canvas */
-body.home-1 header#main-header.header-on-hero {
-  background-color: rgba(10, 10, 8, 0.45) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-}
-
-body.home-1 header#main-header.header-on-hero .font-monument,
-body.home-1 header#main-header.header-on-hero nav a,
-body.home-1 header#main-header.header-on-hero #home-dropdown-btn span,
-body.home-1 header#main-header.header-on-hero #home-dropdown-btn i {
-  color: #ffffff !important;
-}
-
-/* Brand Wordmark Subtitle: "ARCHITECTURE • INTERIORS" in high-contrast champagne gold */
-body.home-1 header#main-header.header-on-hero .logo-subtext,
-body.home-1 header#main-header.header-on-hero a span[class*="text-olive"],
-body.home-1 header#main-header.header-on-hero a span.text-olive,
-body.home-1 header#main-header.header-on-hero a span.text-gold,
-html:not(.dark) body.home-1 header#main-header.header-on-hero .logo-subtext,
-html:not(.dark) body.home-1 header#main-header.header-on-hero a span[class*="text-olive"],
-html:not(.dark) body.home-1 header#main-header.header-on-hero a span.text-olive,
-html:not(.dark) body.home-1 header#main-header.header-on-hero a span.text-gold {
-  color: #d5c3a5 !important;
-}
-
-body.home-1 header#main-header.header-on-hero nav a:hover,
-body.home-1 header#main-header.header-on-hero #home-dropdown-btn:hover span {
-  color: #d5c3a5 !important;
-}
-
-body.home-1 header#main-header.header-on-hero button.theme-toggle-btn,
-body.home-1 header#main-header.header-on-hero button.rtl-toggle-btn {
-  color: #d5c3a5 !important;
-  border-color: rgba(213, 195, 165, 0.45) !important;
-}
-
-body.home-1 header#main-header.header-on-hero button.theme-toggle-btn svg,
-body.home-1 header#main-header.header-on-hero button.rtl-toggle-btn svg {
-  color: #d5c3a5 !important;
-  stroke: #d5c3a5 !important;
-}
-
-body.home-1 header#main-header.header-on-hero a[href="contact.html"].rounded-full {
-  background-color: #d5c3a5 !important;
-  color: #0a0a08 !important;
-  border-color: #d5c3a5 !important;
-}
-
-body.home-1 header#main-header.header-on-hero a[href="contact.html"].rounded-full span {
-  color: #0a0a08 !important;
-}
-
-/* Header Scrolled past Hero onto Ivory Page Content */
-body.home-1 header#main-header.header-scrolled-page {
-  background-color: rgba(233, 228, 219, 0.95) !important;
-  border-bottom: 1px solid rgba(184, 165, 132, 0.35) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  box-shadow: 0 4px 30px rgba(17, 18, 15, 0.08) !important;
-}
-
-body.home-1 header#main-header.header-scrolled-page .font-monument,
-body.home-1 header#main-header.header-scrolled-page nav a,
-body.home-1 header#main-header.header-scrolled-page #home-dropdown-btn span {
-  color: #11120f !important;
-}
-
-html:not(.dark) body.home-1 header#main-header.header-scrolled-page .logo-subtext,
-html:not(.dark) body.home-1 header#main-header.header-scrolled-page a span[class*="text-olive"] {
-  color: #5a4522 !important;
-}
-
-html.dark body.home-1 header#main-header.header-scrolled-page {
-  background-color: rgba(17, 18, 15, 0.95) !important;
-  border-bottom: 1px solid rgba(213, 195, 165, 0.15) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6) !important;
-}
-
-html.dark body.home-1 header#main-header.header-scrolled-page .font-monument,
-html.dark body.home-1 header#main-header.header-scrolled-page nav a,
-html.dark body.home-1 header#main-header.header-scrolled-page #home-dropdown-btn span {
-  color: #f5f2ec !important;
-}
-
-html.dark body.home-1 header#main-header.header-scrolled-page .logo-subtext,
-html.dark body.home-1 header#main-header.header-scrolled-page a span[class*="text-olive"] {
-  color: #d5c3a5 !important;
-}
 
 /* Universal Dark Mode: Brand subtitle "ARCHITECTURE • INTERIORS" always luminous Champagne Gold */
 html.dark header a span[class*="text-olive"],
