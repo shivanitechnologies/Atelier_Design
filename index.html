@@ -108,9 +108,9 @@
       display: none !important;
     }
 
-    /* Smooth scrolling */
+    /* Smooth scrolling disabled for scrollytelling canvas to prevent damping conflict */
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto !important;
     }
 
     /* Page animation */
@@ -241,11 +241,11 @@
 </head>
 
 <body
-  class="bg-ivory dark:bg-charcoal text-charcoal-900 dark:text-ivory font-sans transition-colors duration-400 bg-grain selection:bg-olive selection:text-ivory">
+  class="home-1 bg-ivory dark:bg-charcoal text-charcoal-900 dark:text-ivory font-sans transition-colors duration-400 bg-grain selection:bg-olive selection:text-ivory">
 
-  <!-- NAVIGATION HEADER -->
-  <header
-    class="sticky top-0 z-40 transition-all duration-300 bg-ivory/90 dark:bg-charcoal/90 border-b border-atelier backdrop-blur-xl">
+  <!-- NAVIGATION HEADER (FIXED OVERLAY ON HERO) -->
+  <header id="main-header"
+    class="fixed top-0 left-0 w-full z-40 transition-all duration-300 header-on-hero">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
 
       <!-- Brand Architectural Monogram & Wordmark -->

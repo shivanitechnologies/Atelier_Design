@@ -92,7 +92,6 @@
     const x = (width - drawWidth) * 0.5;
     const y = (height - drawHeight) * 0.5;
 
-    ctx.clearRect(0, 0, width, height);
     ctx.drawImage(img, x, y, drawWidth, drawHeight);
 
     lastDrawnFrame = index;
@@ -115,21 +114,30 @@
   function updateScrollTarget() {
     if (!hero) return;
 
-    const rect = hero.getBoundingClientRect();
     const scrollableDistance = hero.offsetHeight - window.innerHeight;
-
-    const scrolled = Math.max(0, Math.min(scrollableDistance, -rect.top));
-
+    const scrolled = Math.max(0, Math.min(scrollableDistance, window.scrollY));
     const scrollProgress = scrollableDistance > 0 ? scrolled / scrollableDistance : 0;
 
     targetFrame = scrollProgress * (frameCount - 1);
+
+    // Dynamic header styling: Dark glass over hero canvas, luxury frosted on page content
+    const header = document.getElementById("main-header");
+    if (header) {
+      if (window.scrollY >= (hero.offsetHeight - 80)) {
+        header.classList.add("header-scrolled-page");
+        header.classList.remove("header-on-hero");
+      } else {
+        header.classList.add("header-on-hero");
+        header.classList.remove("header-scrolled-page");
+      }
+    }
   }
 
-  // Smooth, relaxed interpolation loop (gentle 0.08 lerp for cinematographic slow pacing)
+  // Smooth, relaxed interpolation loop (0.12 lerp for silky, responsive pacing)
   function animationLoop() {
     const delta = targetFrame - currentFrame;
     if (Math.abs(delta) > 0.005) {
-      currentFrame += delta * 0.08;
+      currentFrame += delta * 0.12;
     } else {
       currentFrame = targetFrame;
     }
@@ -145,8 +153,7 @@
 
     if (progress && hero) {
       const scrollableDistance = hero.offsetHeight - window.innerHeight;
-      const rect = hero.getBoundingClientRect();
-      const scrolled = Math.max(0, Math.min(scrollableDistance, -rect.top));
+      const scrolled = Math.max(0, Math.min(scrollableDistance, window.scrollY));
       const pct = scrollableDistance > 0 ? (scrolled / scrollableDistance) * 100 : 0;
       progress.style.width = `${pct}%`;
     }

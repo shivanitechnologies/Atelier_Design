@@ -533,23 +533,23 @@ html:not(.dark) th.text-gold,
 html:not(.dark) td.text-gold,
 html:not(.dark) p .text-gold,
 html:not(.dark) p .text-olive {
-  color: #6e542c !important;
+  color: #5a4522 !important;
 }
 
 /* Header Active Links, Hover States & Underlines in Light Mode */
-html:not(.dark) header a.text-olive,
-html:not(.dark) header a.text-gold,
-html:not(.dark) header button.text-olive,
-html:not(.dark) header button.text-gold,
-html:not(.dark) header .border-olive,
-html:not(.dark) header .border-gold {
-  color: #6e542c !important;
-  border-color: #6e542c !important;
+html:not(.dark) header:not(.header-on-hero) a.text-olive,
+html:not(.dark) header:not(.header-on-hero) a.text-gold,
+html:not(.dark) header:not(.header-on-hero) button.text-olive,
+html:not(.dark) header:not(.header-on-hero) button.text-gold,
+html:not(.dark) header:not(.header-on-hero) .border-olive,
+html:not(.dark) header:not(.header-on-hero) .border-gold {
+  color: #4a381a !important;
+  border-color: #4a381a !important;
 }
 
-html:not(.dark) header a:hover,
-html:not(.dark) header button:hover {
-  color: #6e542c !important;
+html:not(.dark) header:not(.header-on-hero) a:hover,
+html:not(.dark) header:not(.header-on-hero) button:hover {
+  color: #4a381a !important;
 }
 
 /* Retain Champagne Gold on Permanently Dark / Charcoal Sections in Light Mode */
@@ -602,8 +602,8 @@ html:not(.dark) i.text-gold,
 html:not(.dark) i.text-olive,
 html:not(.dark) svg.text-gold,
 html:not(.dark) svg.text-olive {
-  color: #6e542c !important;
-  stroke: #6e542c !important;
+  color: #4a381a !important;
+  stroke: #4a381a !important;
 }
 
 html:not(.dark) #hero i,
@@ -797,6 +797,112 @@ input[type=range].estimator-slider::-moz-range-thumb {
   visibility: hidden;
   pointer-events: none;
 }
+
+/* ==========================================================================
+   Home 1 Hero Scrollytelling Pinned Header & Zero-Jitter Alignment
+   ========================================================================== */
+html:has(.hero-sequence-container),
+body.home-1 {
+  scroll-behavior: auto !important;
+}
+
+/* Header Floating Overlay over Dark Hero Canvas */
+body.home-1 header#main-header.header-on-hero {
+  background-color: rgba(10, 10, 8, 0.45) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+
+body.home-1 header#main-header.header-on-hero .font-monument,
+body.home-1 header#main-header.header-on-hero nav a,
+body.home-1 header#main-header.header-on-hero #home-dropdown-btn span,
+body.home-1 header#main-header.header-on-hero #home-dropdown-btn i {
+  color: #ffffff !important;
+}
+
+body.home-1 header#main-header.header-on-hero nav a:hover,
+body.home-1 header#main-header.header-on-hero #home-dropdown-btn:hover span {
+  color: #d5c3a5 !important;
+}
+
+body.home-1 header#main-header.header-on-hero button.theme-toggle-btn,
+body.home-1 header#main-header.header-on-hero button.rtl-toggle-btn {
+  color: #d5c3a5 !important;
+  border-color: rgba(213, 195, 165, 0.45) !important;
+}
+
+body.home-1 header#main-header.header-on-hero button.theme-toggle-btn svg,
+body.home-1 header#main-header.header-on-hero button.rtl-toggle-btn svg {
+  color: #d5c3a5 !important;
+  stroke: #d5c3a5 !important;
+}
+
+body.home-1 header#main-header.header-on-hero a[href="contact.html"].rounded-full {
+  background-color: #d5c3a5 !important;
+  color: #0a0a08 !important;
+  border-color: #d5c3a5 !important;
+}
+
+body.home-1 header#main-header.header-on-hero a[href="contact.html"].rounded-full span {
+  color: #0a0a08 !important;
+}
+
+/* Header Scrolled past Hero onto Ivory Page Content */
+body.home-1 header#main-header.header-scrolled-page {
+  background-color: rgba(233, 228, 219, 0.95) !important;
+  border-bottom: 1px solid rgba(184, 165, 132, 0.35) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 4px 30px rgba(17, 18, 15, 0.08) !important;
+}
+
+body.home-1 header#main-header.header-scrolled-page .font-monument,
+body.home-1 header#main-header.header-scrolled-page nav a,
+body.home-1 header#main-header.header-scrolled-page #home-dropdown-btn span {
+  color: #11120f !important;
+}
+
+html.dark body.home-1 header#main-header.header-scrolled-page {
+  background-color: rgba(17, 18, 15, 0.95) !important;
+  border-bottom: 1px solid rgba(213, 195, 165, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark body.home-1 header#main-header.header-scrolled-page .font-monument,
+html.dark body.home-1 header#main-header.header-scrolled-page nav a,
+html.dark body.home-1 header#main-header.header-scrolled-page #home-dropdown-btn span {
+  color: #f5f2ec !important;
+}
+
+/* Specific contrast boosts for Light Mode elements identified in user audits */
+html:not(.dark) table th.text-gold {
+  color: #3d2e14 !important;
+  font-weight: 700 !important;
+}
+
+html:not(.dark) table td.text-gold {
+  color: #4a381a !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) .bg-gold\/15 i,
+html:not(.dark) .bg-gold\/15 svg {
+  color: #4a381a !important;
+  stroke: #4a381a !important;
+}
+
+html:not(.dark) .border-gold\/40.bg-gold\/10 span,
+html:not(.dark) .border-gold\/40.bg-gold\/10 i {
+  color: #4a381a !important;
+  stroke: #4a381a !important;
+}
+
+html:not(.dark) .border-gold\/40.bg-gold\/10 {
+  border-color: rgba(90, 69, 34, 0.4) !important;
+  background-color: rgba(90, 69, 34, 0.08) !important;
+}
+
 
 
 
