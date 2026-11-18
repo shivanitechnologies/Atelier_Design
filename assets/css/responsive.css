@@ -328,7 +328,10 @@ html.dark .mobile-nav-link:hover {
   #hero .hero-bottom,
   #hero .progress-track,
   .scroll-indicator,
-  .frame-counter {
+  .frame-counter,
+  .hero-loader,
+  .loader,
+  #loader {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;

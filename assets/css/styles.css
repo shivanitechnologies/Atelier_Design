@@ -803,22 +803,13 @@ input[type=range].estimator-slider::-moz-range-thumb {
   background: #d5c3a5;
 }
 
-.hero-loader {
-  position: absolute;
-  inset: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: #171813;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.hero-loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.hero-loader,
+.loader,
+#loader {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 /* ==========================================================================
